@@ -1,0 +1,172 @@
+{
+  "leadership": [
+    {
+      "id": "saiful-islam-khan",
+      "name": "Md Saiful Islam Khan",
+      "position": "Proprietor & Founder",
+      "description": "Visionary leader with extensive experience in agricultural technology and government contracting.",
+      "image": "/images/team/saiful.jpg",
+      "expertise": [
+        "Agricultural Technology",
+        "Government Relations",
+        "Strategic Planning"
+      ],
+      "experience": "15",
+      "education": "MBA in Business Administration",
+      "achievements": [
+        "Founded Kajal Enterprise in 2018",
+        "Secured 50+ government contracts"
+      ]
+    },
+    {
+      "id": "sharmin-akhtar",
+      "name": "Sharmin Akhtar",
+      "position": "Co-Founder & Director",
+      "description": "Focused on strategic partnerships and sustainable growth for the company.",
+      "image": "/images/team/sharmin.jpg",
+      "expertise": [
+        "Strategic Partnerships",
+        "Sustainability",
+        "Business Growth"
+      ],
+      "experience": "12",
+      "education": "MBA in International Business",
+      "achievements": [
+        "Established 10+ strategic partnerships",
+        "Drove 30% revenue growth"
+      ]
+    }
+  ],
+  "technicalTeam": [
+    {
+      "id": "rahman-ahmed",
+      "name": "Rahman Ahmed",
+      "position": "Lead Engineer",
+      "description": "Expert in greenhouse systems and agricultural technology.",
+      "image": "/images/team/rahman.jpg",
+      "expertise": [
+        "Greenhouse Technology",
+        "IoT Systems",
+        "Agricultural Engineering"
+      ],
+      "experience": "10",
+      "education": "MSc in Agricultural Engineering",
+      "achievements": [
+        "Led 20+ successful greenhouse projects",
+        "Developed IoT monitoring systems"
+      ]
+    },
+    {
+      "id": "sakib-hasan",
+      "name": "Sakib Hasan",
+      "position": "Senior Software Developer",
+      "description": "Specializes in software solutions for agricultural automation.",
+      "image": "/images/team/sakib.jpg",
+      "expertise": ["JavaScript", "Python", "Embedded Systems"],
+      "experience": "7",
+      "education": "BSc in Computer Engineering",
+      "achievements": [
+        "Built 15+ automation solutions",
+        "Integrated AI-based monitoring systems"
+      ]
+    },
+    {
+      "id": "mahmuda-khan",
+      "name": "Mahmuda Khan",
+      "position": "IoT Specialist",
+      "description": "Focuses on sensor integration and real-time monitoring.",
+      "image": "/images/team/mahmuda.jpg",
+      "expertise": [
+        "Sensor Networks",
+        "Real-Time Monitoring",
+        "Cloud Data Systems"
+      ],
+      "experience": "5",
+      "education": "BSc in Electronics and Communication",
+      "achievements": [
+        "Deployed 50+ IoT sensors across projects",
+        "Enhanced system accuracy by 25%"
+      ]
+    },
+    {
+      "id": "farid-ul-islam",
+      "name": "Farid Ul Islam",
+      "position": "Junior Software Engineer",
+      "description": "Assists in software development and testing processes.",
+      "image": "/images/team/farid.jpg",
+      "expertise": ["ReactJS", "PHP", "Database Support"],
+      "experience": "2",
+      "education": "BSc in Software Engineering",
+      "achievements": [
+        "Automated reporting processes",
+        "Improved backend system performance"
+      ]
+    }
+  ],
+  "operationsTeam": [
+    {
+      "id": "fatima-begum",
+      "name": "Fatima Begum",
+      "position": "Operations Manager",
+      "description": "Experienced in project management and team coordination.",
+      "image": "/images/team/fatima.jpg",
+      "expertise": [
+        "Project Management",
+        "Team Leadership",
+        "Process Optimization"
+      ],
+      "experience": "8",
+      "education": "BBA in Operations Management",
+      "achievements": [
+        "Streamlined project delivery process",
+        "Improved team efficiency by 40%"
+      ]
+    },
+    {
+      "id": "jamal-hossain",
+      "name": "Jamal Hossain",
+      "position": "Procurement Specialist",
+      "description": "Handles supplier relationships and procurement activities.",
+      "image": "/images/team/jamal.jpg",
+      "expertise": ["Vendor Management", "Purchase Planning", "Cost Reduction"],
+      "experience": "6",
+      "education": "BBA in Supply Chain Management",
+      "achievements": [
+        "Reduced procurement costs by 18%",
+        "Negotiated long-term supplier contracts"
+      ]
+    },
+    {
+      "id": "nashrin-jahan",
+      "name": "Nashrin Jahan",
+      "position": "HR & Administration Officer",
+      "description": "Manages HR operations and office administration.",
+      "image": "/images/team/nashrin.jpg",
+      "expertise": [
+        "Employee Relations",
+        "Office Administration",
+        "Policy Development"
+      ],
+      "experience": "4",
+      "education": "BBA in Human Resource Management",
+      "achievements": [
+        "Implemented new employee policies",
+        "Reduced staff turnover by 15%"
+      ]
+    },
+    {
+      "id": "rashed-karim",
+      "name": "Rashed Karim",
+      "position": "Logistics Coordinator",
+      "description": "Coordinates logistics, deliveries, and supplier communication.",
+      "image": "/images/team/rashed.jpg",
+      "expertise": ["Logistics Management", "Inventory Control", "Scheduling"],
+      "experience": "5",
+      "education": "Diploma in Logistics Management",
+      "achievements": [
+        "Improved delivery accuracy by 30%",
+        "Reduced delivery times by 20%"
+      ]
+    }
+  ]
+}

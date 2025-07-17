@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "title": "CSAWM Implementation",
+      "subtitle": "Climate Smart Agriculture Water Management",
+      "description": "Deployment of IoT-based water management systems across 15 districts, enabling real-time monitoring and automated irrigation for sustainable agriculture.",
+      "client": "Department of Agriculture Extension",
+      "budget": "$350K",
+      "impact": "15 Districts Covered",
+      "duration": "2022-2023",
+      "completedDate": "December 2023",
+      "status": "Completed",
+      "image": "https://images.pexels.com/photos/158827/irrigation-landscape-water-farming-158827.jpeg?auto=compress&w=600&h=400&fit=crop",
+      "technologies": [
+        "IoT Sensors",
+        "Automated Irrigation",
+        "Cloud Dashboard",
+        "Farmer Training"
+      ],
+      "results": [
+        "Reduced water usage by 30%",
+        "Increased crop yield by 18%",
+        "Enabled remote monitoring for 200+ farmers"
+      ]
+    },
+    {
+      "title": "Solar Irrigation Systems",
+      "subtitle": "Sustainable Solar-Powered Farming",
+      "description": "Installation of 50+ solar-powered irrigation systems, promoting sustainable farming practices and reducing energy costs for rural farmers.",
+      "client": "Multiple Farmers",
+      "budget": "$200K",
+      "impact": "50+ Installations",
+      "duration": "2023-2024",
+      "completedDate": "August 2024",
+      "status": "Completed",
+      "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&w=600&h=400&fit=crop",
+      "technologies": ["Solar Panels", "Remote Monitoring", "Water Efficiency"],
+      "results": [
+        "60% reduction in energy costs",
+        "Improved irrigation efficiency",
+        "Empowered women farmers"
+      ]
+    },
+    {
+      "title": "Cold Storage Facilities",
+      "subtitle": "Zero Energy Cooling Chambers",
+      "description": "Development of zero energy cooling chambers for agricultural produce, reducing post-harvest losses and improving food security.",
+      "client": "Agricultural Cooperatives",
+      "budget": "$150K",
+      "impact": "40% Loss Reduction",
+      "duration": "2023-2024",
+      "completedDate": "June 2024",
+      "status": "Completed",
+      "image": "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop",
+      "technologies": [
+        "Zero Energy Cooling",
+        "Humidity Control",
+        "Temperature Monitoring"
+      ],
+      "results": [
+        "Reduced post-harvest losses by 40%",
+        "Extended shelf life of produce",
+        "Increased farmer income"
+      ]
+    }
+  ]
+}
