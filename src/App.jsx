@@ -3,6 +3,7 @@ import { TeamProvider } from "./context/TeamContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import ScrollToTop from "./components/ScrollToTop"; // Add this import
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -13,6 +14,7 @@ function App() {
   return (
     <TeamProvider>
       <Router>
+        <ScrollToTop /> {/* Add this component */}
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <main>

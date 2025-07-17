@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -20,13 +21,21 @@ const Navbar = () => {
   };
 
   const handleNavClick = (href) => {
+    setIsMenuOpen(false);
+
     if (href.startsWith("/#")) {
       const element = document.getElementById(href.substring(2));
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      // Scroll to top before navigation
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      navigate(href);
     }
-    setIsMenuOpen(false);
   };
 
   return (
