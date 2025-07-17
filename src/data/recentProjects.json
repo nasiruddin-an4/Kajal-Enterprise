@@ -1,58 +1,70 @@
 {
-  "projects": [
+  "completedProjects": [
     {
+      "id": "csawm-2023",
       "title": "CSAWM Implementation",
-      "subtitle": "Climate Smart Agriculture Water Management",
-      "description": "Deployment of IoT-based water management systems across 15 districts, enabling real-time monitoring and automated irrigation for sustainable agriculture.",
-      "client": "Department of Agriculture Extension",
-      "budget": "$350K",
-      "impact": "15 Districts Covered",
-      "duration": "2022-2023",
+      "subtitle": "Smart Water Management System",
+      "description": "Climate Smart Agriculture Water Management system deployed across 15 districts with IoT sensors and automated irrigation.",
       "completedDate": "December 2023",
-      "status": "Completed",
-      "image": "https://images.pexels.com/photos/158827/irrigation-landscape-water-farming-158827.jpeg?auto=compress&w=600&h=400&fit=crop",
-      "technologies": [
+      "category": "Government",
+      "icon": "💧",
+      "client": "Department of Agriculture Extension",
+      "impact": "15 Districts Covered",
+      "budget": "$350K",
+      "location": "Multiple Districts, Bangladesh",
+      "features": [
         "IoT Sensors",
-        "Automated Irrigation",
-        "Cloud Dashboard",
+        "Water Management",
+        "Climate Monitoring",
         "Farmer Training"
       ],
       "results": [
-        "Reduced water usage by 30%",
-        "Increased crop yield by 18%",
-        "Enabled remote monitoring for 200+ farmers"
-      ]
+        "30% reduction in water usage",
+        "18% increase in crop yield",
+        "200+ farmers trained",
+        "Real-time monitoring implemented"
+      ],
+      "image": "https://images.pexels.com/photos/158827/irrigation-landscape-water-farming-158827.jpeg"
     },
     {
+      "id": "solar-irrigation-2024",
       "title": "Solar Irrigation Systems",
-      "subtitle": "Sustainable Solar-Powered Farming",
-      "description": "Installation of 50+ solar-powered irrigation systems, promoting sustainable farming practices and reducing energy costs for rural farmers.",
-      "client": "Multiple Farmers",
-      "budget": "$200K",
-      "impact": "50+ Installations",
-      "duration": "2023-2024",
+      "subtitle": "Sustainable Farming Initiative",
+      "description": "Installation of 50+ solar-powered irrigation systems promoting sustainable farming practices across rural Bangladesh.",
       "completedDate": "August 2024",
-      "status": "Completed",
-      "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&w=600&h=400&fit=crop",
-      "technologies": ["Solar Panels", "Remote Monitoring", "Water Efficiency"],
+      "category": "Sustainability",
+      "icon": "☀️",
+      "client": "Multiple Farmers",
+      "impact": "50+ Installations",
+      "budget": "$200K",
+      "location": "Rural Bangladesh",
+      "features": [
+        "Solar Power",
+        "Water Efficiency",
+        "Remote Monitoring",
+        "Maintenance Support"
+      ],
       "results": [
         "60% reduction in energy costs",
-        "Improved irrigation efficiency",
-        "Empowered women farmers"
-      ]
+        "40% improvement in irrigation efficiency",
+        "Zero carbon emissions",
+        "24/7 monitoring system"
+      ],
+      "image": "https://images.pexels.com/photos/356049/pexels-photo-356049.jpeg"
     },
     {
+      "id": "cold-storage-2024",
       "title": "Cold Storage Facilities",
       "subtitle": "Zero Energy Cooling Chambers",
       "description": "Development of zero energy cooling chambers for agricultural produce, reducing post-harvest losses and improving food security.",
-      "client": "Agricultural Cooperatives",
-      "budget": "$150K",
-      "impact": "40% Loss Reduction",
-      "duration": "2023-2024",
       "completedDate": "June 2024",
-      "status": "Completed",
-      "image": "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop",
-      "technologies": [
+      "category": "Post-Harvest",
+      "icon": "❄️",
+      "client": "Agricultural Cooperatives",
+      "impact": "40% Loss Reduction",
+      "budget": "$150K",
+      "location": "Regional Bangladesh",
+      "features": [
         "Zero Energy Cooling",
         "Humidity Control",
         "Temperature Monitoring"
@@ -61,7 +73,108 @@
         "Reduced post-harvest losses by 40%",
         "Extended shelf life of produce",
         "Increased farmer income"
-      ]
+      ],
+      "image": "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg"
+    },
+    {
+      "id": "mobile-training-2023",
+      "title": "Mobile Farmer Training Program",
+      "subtitle": "Agri-Education on Wheels",
+      "description": "Deployment of mobile training units to educate rural farmers on sustainable farming techniques and technology adoption.",
+      "completedDate": "October 2023",
+      "category": "Education",
+      "icon": "🚜",
+      "client": "Rural Farmers Network",
+      "impact": "500+ Farmers Trained",
+      "budget": "$120K",
+      "location": "Remote Areas, Bangladesh",
+      "features": [
+        "Mobile Training Units",
+        "Practical Workshops",
+        "Technology Demonstrations"
+      ],
+      "results": [
+        "Increased awareness of sustainable practices",
+        "Boosted technology adoption by 35%",
+        "Enhanced productivity in trained regions"
+      ],
+      "image": "https://images.pexels.com/photos/221436/pexels-photo-221436.jpeg"
+    },
+    {
+      "id": "agro-marketplace-2022",
+      "title": "Digital Agro Marketplace",
+      "subtitle": "Connecting Farmers to Buyers",
+      "description": "Development of a digital marketplace platform to connect farmers directly with institutional buyers, reducing middlemen costs.",
+      "completedDate": "December 2022",
+      "category": "Digital Platform",
+      "icon": "📱",
+      "client": "Farmer Cooperatives",
+      "impact": "800+ Farmers Benefited",
+      "budget": "$180K",
+      "location": "Nationwide, Bangladesh",
+      "features": ["Mobile App", "Real-time Listings", "Payment Integration"],
+      "results": [
+        "Reduced marketing costs by 20%",
+        "Increased farmer profits",
+        "Improved product traceability"
+      ],
+      "image": "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg"
     }
-  ]
+  ],
+  "upcomingProjects": [
+    {
+      "id": "data-centre-2025",
+      "title": "Data Centre",
+      "description": "Modern data processing facility for agricultural information management and analysis with cloud integration and real-time monitoring capabilities.",
+      "timeline": "Q2 2025",
+      "category": "Infrastructure",
+      "icon": "💾",
+      "status": "Planning",
+      "budget": "$500K",
+      "location": "Dhaka",
+      "features": [
+        "Cloud Integration",
+        "Real-time Analytics",
+        "Data Security",
+        "Scalable Architecture"
+      ],
+      "objectives": [
+        "Centralize agricultural data",
+        "Enable real-time decision making",
+        "Improve crop yield predictions"
+      ],
+      "image": "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg"
+    },
+    {
+      "id": "it-infrastructure-2025",
+      "title": "IT Infrastructure for Processing Fruits & Vegetables",
+      "description": "Automated systems for quality control and processing optimization using AI and machine learning technologies.",
+      "timeline": "Q3 2025",
+      "category": "Technology",
+      "icon": "🖥️",
+      "status": "Design Phase",
+      "budget": "$750K",
+      "location": "Multiple Districts",
+      "features": [
+        "AI Quality Control",
+        "Automated Sorting",
+        "Process Optimization",
+        "Traceability System"
+      ],
+      "objectives": [
+        "Reduce processing time by 40%",
+        "Improve quality control accuracy",
+        "Minimize waste"
+      ],
+      "image": "https://images.pexels.com/photos/2433467/pexels-photo-2433467.jpeg"
+    }
+  ],
+  "statistics": {
+    "totalInvestment": "$4M+",
+    "completedProjects": 5,
+    "upcomingProjects": 2,
+    "districtsImpacted": 15,
+    "farmersBenefited": "1000+",
+    "sustainabilityScore": "85%"
+  }
 }

@@ -1,158 +1,29 @@
 import { useState, useEffect } from "react";
+import projectsData from "../data/recentProjects.json";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const upcomingProjects = [
-    {
-      title: "Data Centre",
-      description:
-        "Modern data processing facility for agricultural information management and analysis with cloud integration and real-time monitoring capabilities.",
-      timeline: "Q2 2025",
-      category: "Infrastructure",
-      icon: "💾",
-      status: "Planning",
-      budget: "$500K",
-      features: [
-        "Cloud Integration",
-        "Real-time Analytics",
-        "Data Security",
-        "Scalable Architecture",
-      ],
-    },
-    {
-      title: "IT Infrastructure for Processing Fruits & Vegetables",
-      description:
-        "Automated systems for quality control and processing optimization using AI and machine learning technologies.",
-      timeline: "Q3 2025",
-      category: "Technology",
-      icon: "🖥️",
-      status: "Design Phase",
-      budget: "$750K",
-      features: [
-        "AI Quality Control",
-        "Automated Sorting",
-        "Process Optimization",
-        "Traceability System",
-      ],
-    },
-    {
-      title: "VHT Centre",
-      description:
-        "Village Health and Technology center for rural community support with telemedicine and digital literacy programs.",
-      timeline: "Q4 2025",
-      category: "Community",
-      icon: "🏥",
-      status: "Proposal",
-      budget: "$300K",
-      features: [
-        "Telemedicine",
-        "Digital Literacy",
-        "Community Support",
-        "Health Monitoring",
-      ],
-    },
-    {
-      title: "Vertical Farming",
-      description:
-        "Multi-level farming systems for maximized agricultural production in limited space using hydroponic technology.",
-      timeline: "Q1 2026",
-      category: "Innovation",
-      icon: "🌱",
-      status: "Research",
-      budget: "$1.2M",
-      features: [
-        "Hydroponic Systems",
-        "LED Lighting",
-        "Climate Control",
-        "Automated Harvesting",
-      ],
-    },
-    {
-      title: "Automated Packaging Belts",
-      description:
-        "Smart packaging systems for efficient product handling and distribution with IoT integration and quality assurance.",
-      timeline: "Q2 2026",
-      category: "Automation",
-      icon: "📦",
-      status: "Concept",
-      budget: "$400K",
-      features: [
-        "IoT Integration",
-        "Quality Assurance",
-        "Automated Sorting",
-        "Real-time Tracking",
-      ],
-    },
-    {
-      title: "Smart Greenhouse Network",
-      description:
-        "Interconnected greenhouse systems with centralized monitoring and control for optimal crop production.",
-      timeline: "Q3 2026",
-      category: "Infrastructure",
-      icon: "🏠",
-      status: "Planning",
-      budget: "$800K",
-      features: [
-        "Centralized Control",
-        "Climate Monitoring",
-        "Automated Irrigation",
-        "Crop Analytics",
-      ],
-    },
+  // Get unique categories from all projects
+  const categories = [
+    "all",
+    ...new Set([
+      ...projectsData.upcomingProjects.map((p) => p.category),
+      ...projectsData.completedProjects.map((p) => p.category),
+    ]),
   ];
 
-  const completedProjects = [
-    {
-      title: "CSAWM Implementation",
-      description:
-        "Climate Smart Agriculture Water Management system deployed across 15 districts with IoT sensors and automated irrigation.",
-      completedDate: "December 2023",
-      category: "Government",
-      icon: "💧",
-      client: "Department of Agriculture Extension",
-      impact: "15 Districts Covered",
-      features: [
-        "IoT Sensors",
-        "Water Management",
-        "Climate Monitoring",
-        "Farmer Training",
-      ],
-    },
-    {
-      title: "Solar Irrigation Systems",
-      description:
-        "Installation of 50+ solar-powered irrigation systems promoting sustainable farming practices across rural Bangladesh.",
-      completedDate: "August 2024",
-      category: "Sustainability",
-      icon: "☀️",
-      client: "Multiple Farmers",
-      impact: "50+ Installations",
-      features: [
-        "Solar Power",
-        "Water Efficiency",
-        "Remote Monitoring",
-        "Maintenance Support",
-      ],
-    },
-    {
-      title: "Cold Storage Facilities",
-      description:
-        "Zero energy cooling chambers for agricultural produce preservation reducing post-harvest losses by 40%.",
-      completedDate: "June 2024",
-      category: "Infrastructure",
-      icon: "❄️",
-      client: "Agricultural Cooperatives",
-      impact: "40% Loss Reduction",
-      features: [
-        "Zero Energy",
-        "Temperature Control",
-        "Humidity Management",
-        "Quality Preservation",
-      ],
-    },
-  ];
+  // Filter upcoming projects based on search and category
+  const filteredProjects = projectsData.upcomingProjects.filter((project) => {
+    const matchesCategory =
+      activeCategory === "all" || project.category === activeCategory;
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   const getCategoryColor = (category) => {
     const colors = {
@@ -178,20 +49,6 @@ const Projects = () => {
     return colors[status] || "bg-gray-500";
   };
 
-  const filteredProjects = upcomingProjects.filter((project) => {
-    const matchesCategory =
-      activeCategory === "all" || project.category === activeCategory;
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const categories = [
-    "all",
-    ...new Set(upcomingProjects.map((p) => p.category)),
-  ];
-
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -214,108 +71,159 @@ const Projects = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Enhanced */}
+      <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0">
+          <div
+            className="h-full w-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.pexels.com/photos/1461671/pexels-photo-1461671.jpeg')",
+              filter: "brightness(0.4)",
+            }}
+          ></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Our Projects
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
+              Transforming Agriculture
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-in">
-              Innovative solutions shaping the future of agriculture and
-              technology integration
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto animate-slide-in leading-relaxed">
+              Through innovative solutions and sustainable technology
             </p>
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
-              <div className="bg-brand-green bg-opacity-20 px-6 py-3 rounded-full">
-                <span className="font-semibold">6 Upcoming Projects</span>
-              </div>
-              <div className="bg-brand-green bg-opacity-20 px-6 py-3 rounded-full">
-                <span className="font-semibold">3 Completed Projects</span>
-              </div>
-              <div className="bg-brand-green bg-opacity-20 px-6 py-3 rounded-full">
-                <span className="font-semibold">$4M+ Investment</span>
-              </div>
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+              {[
+                {
+                  label: "Total Investment",
+                  value: projectsData.statistics.totalInvestment,
+                  icon: "💰",
+                },
+                {
+                  label: "Districts Impacted",
+                  value: projectsData.statistics.districtsImpacted,
+                  icon: "🗺️",
+                },
+                {
+                  label: "Farmers Benefited",
+                  value: projectsData.statistics.farmersBenefited,
+                  icon: "👨‍🌾",
+                },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                >
+                  <div className="text-3xl mb-2">{stat.icon}</div>
+                  <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-sm opacity-80">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Completed Projects */}
-      <section className="py-16 bg-white">
+      {/* Completed Projects - Enhanced */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Completed Projects
             </h2>
-            <div className="w-20 h-1 bg-brand-green mx-auto mb-4"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Successful implementations that have made a real impact on
-              agricultural productivity and sustainability
+            <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Successfully delivered solutions that have transformed
+              agricultural practices
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {completedProjects.map((project, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {projectsData.completedProjects.map((project) => (
               <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 observe-animation opacity-0"
+                key={project.id}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
               >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-6 text-white">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">{project.icon}</span>
+                      <span
+                        className={`px-3 py-1 text-sm rounded-full ${getCategoryColor(
+                          project.category
+                        )}`}
+                      >
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                    <p className="text-white/80">{project.subtitle}</p>
+                  </div>
+                </div>
+
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-4xl">{project.icon}</div>
-                    <span
-                      className={`px-3 py-1 text-xs rounded-full border ${getCategoryColor(
-                        project.category
-                      )}`}
-                    >
-                      {project.category}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Client:</span>
-                      <span className="font-medium text-gray-900">
-                        {project.client}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Impact:</span>
-                      <span className="font-medium text-brand-green">
-                        {project.impact}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Completed:</span>
-                      <span className="font-medium text-gray-900">
-                        {project.completedDate}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <h4 className="text-sm font-medium text-gray-900 mb-2">
-                      Key Features:
-                    </h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.features.map((feature, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
-                        >
-                          {feature}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    {[
+                      { label: "Budget", value: project.budget },
+                      { label: "Impact", value: project.impact },
+                      { label: "Location", value: project.location },
+                      { label: "Completed", value: project.completedDate },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-gray-50 p-3 rounded-lg">
+                        <span className="text-sm text-gray-500 block mb-1">
+                          {item.label}
                         </span>
-                      ))}
-                    </div>
+                        <span className="font-semibold text-gray-900">
+                          {item.value}
+                        </span>
+                      </div>
+                    ))}
                   </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      Key Results
+                    </h4>
+                    <ul className="space-y-2">
+                      {project.results.map((result, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <svg
+                            className="w-5 h-5 text-brand-green"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          {result}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="w-full bg-brand-green hover:bg-brand-green-dark text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             ))}
@@ -323,32 +231,31 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Upcoming Projects */}
-      <section className="py-16 bg-gray-50">
+      {/* Upcoming Projects Section - Enhanced */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Upcoming Projects
             </h2>
-            <div className="w-20 h-1 bg-brand-green mx-auto mb-4"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Innovative pipeline of projects that will shape the future of
-              agriculture and technology integration
+            <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Innovative pipeline of projects shaping the future of agriculture
             </p>
           </div>
 
-          {/* Filters */}
-          <div className="mb-8">
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-              <div className="flex flex-wrap gap-2">
+          {/* Enhanced Filters */}
+          <div className="mb-12">
+            <div className="flex flex-col md:flex-row gap-6 items-center justify-between bg-white p-6 rounded-xl shadow-sm">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setActiveCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                       activeCategory === category
-                        ? "bg-brand-green text-white"
-                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                        ? "bg-brand-green text-white shadow-md transform -translate-y-0.5"
+                        : "bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow"
                     }`}
                   >
                     {category === "all" ? "All Projects" : category}
@@ -356,16 +263,16 @@ const Projects = () => {
                 ))}
               </div>
 
-              <div className="relative">
+              <div className="relative w-full md:w-auto">
                 <input
                   type="text"
                   placeholder="Search projects..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+                  className="w-full md:w-64 pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
                 />
                 <svg
-                  className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
+                  className="absolute left-4 top-3.5 h-5 w-5 text-gray-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -381,88 +288,117 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Projects Grid */}
+          {/* Projects Grid - Enhanced */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 observe-animation opacity-0"
+                key={project.id}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 observe-animation opacity-0"
               >
+                {/* Project Image */}
+                <div className="relative h-48 rounded-t-2xl overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <span className="text-3xl">{project.icon}</span>
+                    <span
+                      className={`px-3 py-1 text-xs rounded-full ${getCategoryColor(
+                        project.category
+                      )}`}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Project Details */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="text-4xl">{project.icon}</div>
-                    <div className="flex flex-col items-end gap-1">
-                      <span
-                        className={`px-3 py-1 text-xs rounded-full border ${getCategoryColor(
-                          project.category
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={`w-2 h-2 rounded-full ${getStatusColor(
+                          project.status
                         )}`}
-                      >
-                        {project.category}
-                      </span>
-                      <div className="flex items-center gap-1">
-                        <div
-                          className={`w-2 h-2 rounded-full ${getStatusColor(
-                            project.status
-                          )}`}
-                        ></div>
-                        <span className="text-xs text-gray-500">
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Timeline:</span>
-                      <span className="font-medium text-gray-900">
-                        {project.timeline}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Budget:</span>
-                      <span className="font-medium text-brand-green">
-                        {project.budget}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Status:</span>
-                      <span className="font-medium text-gray-900">
+                      ></div>
+                      <span className="text-xs text-gray-500">
                         {project.status}
                       </span>
                     </div>
                   </div>
 
+                  <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  {/* Project Metrics */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <span className="text-xs text-gray-500 block mb-1">
+                        Timeline
+                      </span>
+                      <span className="font-semibold text-gray-900">
+                        {project.timeline}
+                      </span>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <span className="text-xs text-gray-500 block mb-1">
+                        Budget
+                      </span>
+                      <span className="font-semibold text-brand-green">
+                        {project.budget}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Features Tags */}
                   <div className="border-t pt-4">
-                    <h4 className="text-sm font-medium text-gray-900 mb-2">
-                      Key Features:
-                    </h4>
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-2">
                       {project.features.map((feature, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
+                          className="px-2 py-1 bg-brand-green/10 text-brand-green text-xs rounded-full"
                         >
                           {feature}
                         </span>
                       ))}
                     </div>
                   </div>
+
+                  {/* Action Button */}
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="mt-6 w-full bg-brand-green hover:bg-brand-green-dark text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 group"
+                  >
+                    <span>View Details</span>
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* No Results Message */}
           {filteredProjects.length === 0 && (
-            <div className="text-center py-12">
+            <div className="text-center py-16 bg-white rounded-2xl shadow-sm">
               <div className="text-gray-400 text-6xl mb-4">🔍</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 No projects found
@@ -481,7 +417,7 @@ const Projects = () => {
           <h3 className="text-3xl font-bold mb-6">Innovation at the Core</h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             These projects represent our commitment to bringing cutting-edge
-            technology to Bangladesh's agricultural sector, creating sustainable
+            technology to Bangladeshs agricultural sector, creating sustainable
             solutions for farmers and contributing to national food security.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -500,57 +436,6 @@ const Projects = () => {
                 <span className="font-medium">{tag}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Timeline */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Project Timeline
-            </h3>
-            <p className="text-gray-600">
-              Roadmap for our upcoming innovations
-            </p>
-          </div>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-green"></div>
-            <div className="space-y-8">
-              {upcomingProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
-                >
-                  <div
-                    className={`w-1/2 ${
-                      index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
-                    }`}
-                  >
-                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                      <h4 className="font-semibold text-gray-900">
-                        {project.title}
-                      </h4>
-                      <p className="text-sm text-gray-600 mb-1">
-                        {project.timeline}
-                      </p>
-                      <span
-                        className={`inline-block px-2 py-1 text-xs rounded ${getCategoryColor(
-                          project.category
-                        )}`}
-                      >
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="w-4 h-4 bg-brand-green rounded-full border-4 border-white shadow-lg relative z-10"></div>
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

@@ -5,7 +5,9 @@ import projectsData from "../data/recentProjects.json";
 const RecentProjects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const projects = projectsData.projects;
+
+  // Use completedProjects instead of projects
+  const projects = projectsData.completedProjects;
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -29,18 +31,18 @@ const RecentProjects = () => {
             Recent Completed Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Showcasing our latest successful implementations that have
             transformed agricultural practices and improved farmer livelihoods
             across Bangladesh.
           </p>
         </div>
 
-        {/* Projects Grid - Small Cards */}
+        {/* Projects Grid - update to use new data structure */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
-              key={index}
+              key={project.id}
               className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
             >
               {/* Project Image */}
@@ -53,25 +55,23 @@ const RecentProjects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute top-2 left-2">
                   <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                    {project.status}
+                    {project.category}
                   </span>
                 </div>
-                <div className="absolute bottom-2 left-2 right-2">
-                  <h3 className="text-white text-base font-bold mb-1 truncate">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-200 text-xs truncate">
-                    {project.subtitle}
-                  </p>
+                <div className="absolute top-2 right-2 text-2xl">
+                  {project.icon}
                 </div>
               </div>
 
-              {/* Project Content - Compact */}
+              {/* Project Content */}
               <div className="p-4">
+                <h3 className="text-brand-green text-base font-bold mb-1 truncate">
+                  {project.title}
+                </h3>
                 <p className="text-gray-600 mb-2 text-sm truncate">
-                  {project.description}
+                  {project.subtitle}
                 </p>
-                <div className="flex justify-between items-center text-xs mb-2">
+                <div className="flex justify-between items-center text-md mb-2">
                   <span className="font-medium text-gray-900">
                     {project.client}
                   </span>
@@ -90,13 +90,10 @@ const RecentProjects = () => {
           ))}
         </div>
 
-        {/* Modal for Project Details */}
+        {/* Modal - update to use new data structure */}
         {modalOpen && selectedProject && (
           <div className="fixed inset-0 z-50 pt-14 flex items-center justify-center p-4 bg-black bg-opacity-40 overflow-y-auto">
-            <div
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl p-4 md:p-6 lg:p-8 relative animate-fade-in-up my-8"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl p-4 md:p-6 lg:p-8 relative animate-fade-in-up my-8">
               {/* Close Button */}
               <button
                 className="absolute -top-4 -right-4 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-500 hover:text-brand-green transition-colors z-10"
@@ -129,7 +126,7 @@ const RecentProjects = () => {
                     />
                     <div className="absolute top-2 right-2">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        {selectedProject.status}
+                        {selectedProject.category}
                       </span>
                     </div>
                   </div>
@@ -137,7 +134,7 @@ const RecentProjects = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { label: "Client", value: selectedProject.client },
-                      { label: "Duration", value: selectedProject.duration },
+                      { label: "Location", value: selectedProject.location },
                       {
                         label: "Budget",
                         value: selectedProject.budget,
@@ -183,15 +180,15 @@ const RecentProjects = () => {
 
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                      Technologies Used
+                      Features
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, idx) => (
+                      {selectedProject.features.map((feature, idx) => (
                         <span
                           key={idx}
                           className="bg-brand-green bg-opacity-10 text-brand-green px-3 py-1.5 rounded-lg text-sm font-medium"
                         >
-                          {tech}
+                          {feature}
                         </span>
                       ))}
                     </div>
@@ -199,7 +196,7 @@ const RecentProjects = () => {
 
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                      Key Results
+                      Results
                     </h4>
                     <ul className="space-y-2">
                       {selectedProject.results.map((result, idx) => (
@@ -235,9 +232,7 @@ const RecentProjects = () => {
                         </p>
                       </div>
                       <Link
-                        to={`/projects/${selectedProject.title
-                          .toLowerCase()
-                          .replace(/ /g, "-")}`}
+                        to={`/projects/${selectedProject.id}`}
                         className="inline-flex items-center text-brand-green hover:text-brand-green-dark font-semibold text-sm"
                       >
                         View Full Case Study
