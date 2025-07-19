@@ -23,7 +23,7 @@ const TeamMemberDetails = () => {
   }
 
   return (
-    <div className="pt-16 pb-20 bg-gradient-to-br from-gray-50 to-white">
+    <div className="pt-28 pb-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <Link
@@ -73,7 +73,7 @@ const TeamMemberDetails = () => {
               {/* About */}
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">About</h2>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {member.description}
                 </p>
               </div>
@@ -104,7 +104,7 @@ const TeamMemberDetails = () => {
                   <p className="text-2xl font-bold text-brand-green">
                     {member.experience}
                   </p>
-                  <p className="text-gray-600">Professional Experience</p>
+                  <p className="text-gray-500">Professional Experience</p>
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 mb-4">
@@ -138,7 +138,7 @@ const TeamMemberDetails = () => {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        <span className="text-gray-600">{achievement}</span>
+                        <span className="text-gray-500">{achievement}</span>
                       </li>
                     ))}
                   </ul>

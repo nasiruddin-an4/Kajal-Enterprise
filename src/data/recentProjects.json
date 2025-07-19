@@ -24,7 +24,7 @@
         "200+ farmers trained",
         "Real-time monitoring implemented"
       ],
-      "image": "https://images.pexels.com/photos/158827/irrigation-landscape-water-farming-158827.jpeg"
+      "image": "https://old.thefinancialexpress.com.bd/uploads/1647351535.jpg"
     },
     {
       "id": "solar-irrigation-2024",
@@ -119,8 +119,29 @@
         "Improved product traceability"
       ],
       "image": "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg"
+    },
+    {
+      "id": "agro-marketplace-2022",
+      "title": "Digital Agro Marketplace",
+      "subtitle": "Connecting Farmers to Buyers",
+      "description": "Development of a digital marketplace platform to connect farmers directly with institutional buyers, reducing middlemen costs.",
+      "completedDate": "December 2022",
+      "category": "Digital Platform",
+      "icon": "📱",
+      "client": "Farmer Cooperatives",
+      "impact": "800+ Farmers Benefited",
+      "budget": "$180K",
+      "location": "Nationwide, Bangladesh",
+      "features": ["Mobile App", "Real-time Listings", "Payment Integration"],
+      "results": [
+        "Reduced marketing costs by 20%",
+        "Increased farmer profits",
+        "Improved product traceability"
+      ],
+      "image": "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg"
     }
   ],
+
   "upcomingProjects": [
     {
       "id": "data-centre-2025",
@@ -169,6 +190,7 @@
       "image": "https://images.pexels.com/photos/2433467/pexels-photo-2433467.jpeg"
     }
   ],
+
   "statistics": {
     "totalInvestment": "$4M+",
     "completedProjects": 5,

@@ -1,0 +1,37 @@
+{
+  "slides": [
+    {
+      "id": "slide-1",
+      "title": "Precision Agriculture & IoT Solutions",
+      "subtitle": "Smart Irrigation Systems for Modern Farming",
+      "description": "Leveraging IoT technology to optimize water usage and improve crop yields",
+      "image": "https://images.pexels.com/photos/2850290/pexels-photo-2850290.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "cta": {
+        "text": "View Projects",
+        "link": "/projects"
+      }
+    },
+    {
+      "id": "slide-2",
+      "title": "Sustainable Storage Solutions",
+      "subtitle": "Cold Rooms & Zero Energy Cooling Chambers",
+      "description": "Energy-efficient storage solutions for extending produce shelf life",
+      "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "cta": {
+        "text": "Learn More",
+        "link": "/about"
+      }
+    },
+    {
+      "id": "slide-3",
+      "title": "Sustainable Storage Solutions",
+      "subtitle": "Cold Rooms & Zero Energy Cooling Chambers",
+      "description": "Energy-efficient storage solutions for extending produce shelf life",
+      "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "cta": {
+        "text": "Learn More",
+        "link": "/projects"
+      }
+    }
+  ]
+}

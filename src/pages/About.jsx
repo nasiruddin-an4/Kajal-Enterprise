@@ -199,7 +199,7 @@ const About = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-8">
                 Who We Are & What We Do
               </h2>
-              <div className="prose prose-lg text-gray-600">
+              <div className="prose prose-lg text-gray-500">
                 <p>
                   Kajal Enterprise is a pioneering government contractor
                   established in 2018, specializing in agricultural technology
@@ -237,7 +237,7 @@ const About = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 To transform agricultural practices through innovative
                 technology solutions, ensuring sustainable food production while
                 supporting farmers with state-of-the-art equipment and systems
@@ -268,7 +268,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-500">
               The principles that guide our journey
             </p>
           </div>
@@ -286,7 +286,7 @@ const About = () => {
                 <h4 className="text-xl font-bold text-gray-900 mb-4">
                   {value.title}
                 </h4>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -302,7 +302,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-500">
               Milestones that shaped our success
             </p>
           </div>
@@ -328,7 +328,7 @@ const About = () => {
                       <h4 className="text-xl font-bold text-gray-900 mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-500">{item.description}</p>
                     </div>
                   </div>
                   <div className="w-8 h-8 bg-brand-green rounded-full border-4 border-white shadow-lg relative z-10"></div>
@@ -345,7 +345,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-500">
               The people behind our success
             </p>
           </div>

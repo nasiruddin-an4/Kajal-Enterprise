@@ -38,7 +38,7 @@ const Contact = () => {
             Contact Us
           </h2>
           <div className="w-20 h-1 bg-brand-green mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl mx-auto">
             Ready to transform your agricultural projects? Get in touch with our
             team and discover how we can help you succeed.
           </p>
@@ -78,7 +78,7 @@ const Contact = () => {
                   <h4 className="text-lg font-semibold text-gray-900">
                     Address
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-500">
                     H # 500, 3rd floor, R # 7, A # 4<br />
                     Mirpur DOHS, Dhaka - 1216
                     <br />
@@ -105,7 +105,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-500">
                     <a
                       href="mailto:kajalenterprise@gmail.com"
                       className="text-brand-green hover:underline"
@@ -134,7 +134,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-500">
                     <a
                       href="tel:+8801795075025"
                       className="text-brand-green hover:underline"
@@ -158,7 +158,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-gray-900 mb-4">
                 Business Hours
               </h4>
-              <div className="space-y-2 text-gray-600">
+              <div className="space-y-2 text-gray-500">
                 <div className="flex justify-between">
                   <span>Sunday - Thursday</span>
                   <span>9:00 AM - 6:00 PM</span>

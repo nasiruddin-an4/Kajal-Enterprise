@@ -198,9 +198,6 @@ body {
 }
 
 /* Team carousel styles */
-.team-carousel .slick-slide {
-  padding: 1rem;
-}
 
 .team-carousel .slick-track {
   display: flex !important;

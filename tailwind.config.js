@@ -9,6 +9,7 @@ export default {
       colors: {
         'brand-green': '#16a34a',
         'brand-blue': '#00196b',
+        'brand-black': '#232b2b',
       },
     },
   },

@@ -1,0 +1,411 @@
+{
+  "productsServices": {
+    "heading": "Products & Services",
+    "subheading": "Innovative agricultural solutions combining technology and sustainability",
+    "products": [
+      {
+        "id": "iot-sensors",
+        "title": "IoT Sensors & Monitoring",
+        "description": "Advanced sensors for soil moisture, temperature, and nutrient monitoring with real-time data analytics.",
+        "price": "Contact for Quote",
+        "image": "https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg",
+        "category": "Technology",
+        "features": [
+          "Real-time monitoring",
+          "Cloud integration",
+          "Long battery life",
+          "Mobile app support"
+        ],
+        "benefits": [
+          "Increase crop yield by 30%",
+          "Reduce water usage by 40%",
+          "24/7 monitoring"
+        ]
+      },
+      {
+        "id": "solar-irrigation",
+        "title": "Solar Irrigation Systems",
+        "description": "Sustainable solar-powered irrigation systems with smart controls and weather adaptation.",
+        "price": "Contact for Quote",
+        "image": "https://images.pexels.com/photos/356049/pexels-photo-356049.jpeg",
+        "category": "Sustainability",
+        "features": [
+          "Energy efficient",
+          "Remote control",
+          "Weather resistant",
+          "Smart scheduling"
+        ],
+        "benefits": [
+          "Zero energy costs",
+          "60% less maintenance",
+          "Sustainable farming"
+        ]
+      },
+      {
+        "id": "greenhouse",
+        "title": "Smart Greenhouse Solutions",
+        "description": "Automated greenhouse systems with climate control and crop management technology.",
+        "price": "Contact for Quote",
+        "image": "https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg",
+        "category": "Infrastructure",
+        "features": [
+          "Climate control",
+          "Automated ventilation",
+          "Light optimization",
+          "Pest management"
+        ],
+        "benefits": [
+          "Year-round production",
+          "45% higher yield",
+          "Climate resilient"
+        ]
+      }
+    ],
+    "services": [
+      {
+        "id": "agri-tech",
+        "title": "Agricultural Technology",
+        "description": "Comprehensive smart farming solutions including IoT sensors, automated irrigation, and crop monitoring systems.",
+        "icon": "🌾",
+        "category": "Technology",
+        "features": [
+          "System Integration",
+          "Data Analytics",
+          "Remote Monitoring",
+          "Technical Support"
+        ]
+      },
+      {
+        "id": "cold-storage",
+        "title": "Cold Storage Solutions",
+        "description": "State-of-the-art cold storage facilities with precise temperature control and monitoring systems.",
+        "icon": "❄️",
+        "category": "Infrastructure",
+        "features": [
+          "Temperature Control",
+          "Humidity Management",
+          "Energy Efficient",
+          "24/7 Monitoring"
+        ]
+      },
+      {
+        "id": "consulting",
+        "title": "Agricultural Consulting",
+        "description": "Expert guidance on modern farming practices, technology integration, and sustainable agriculture.",
+        "icon": "📊",
+        "category": "Consulting",
+        "features": [
+          "Technical Planning",
+          "Implementation Support",
+          "Training Programs",
+          "Ongoing Support"
+        ]
+      },
+      {
+        "id": "trakd",
+        "title": "Agricultural Consulting",
+        "description": "Expert guidance on modern farming practices, technology integration, and sustainable agriculture.",
+        "icon": "📊",
+        "category": "Consulting",
+        "features": [
+          "Technical Planning",
+          "Implementation Support",
+          "Training Programs",
+          "Ongoing Support"
+        ]
+      }
+    ]
+  },
+
+  "governmentServices": [
+    {
+      "id": "greenhouse",
+      "title": "Greenhouse & Polynet Houses",
+      "description": "State-of-the-art controlled environment agriculture solutions with automated climate control and monitoring systems.",
+      "icon": "🏗️",
+      "color": "bg-brand-green",
+      "features": [
+        "Climate Control Systems",
+        "Automated Ventilation",
+        "Smart Irrigation",
+        "Energy Efficient Design"
+      ]
+    },
+    {
+      "id": "cold-storage",
+      "title": "Cold Rooms & Storage",
+      "description": "Energy-efficient cold storage solutions with temperature and humidity control for agricultural produce preservation.",
+      "icon": "❄️",
+      "color": "bg-brand-blue",
+      "features": [
+        "Temperature Control",
+        "Humidity Management",
+        "Energy Saving",
+        "24/7 Monitoring"
+      ]
+    },
+    {
+      "id": "irrigation",
+      "title": "Smart Irrigation Systems",
+      "description": "IoT-based precision irrigation systems for optimal water usage and crop management.",
+      "icon": "💧",
+      "color": "bg-brand-green",
+      "features": [
+        "IoT Integration",
+        "Real-time Monitoring",
+        "Weather Adaptation",
+        "Mobile Control"
+      ]
+    },
+    {
+      "id": "irrigation",
+      "title": "Smart Irrigation Systems",
+      "description": "IoT-based precision irrigation systems for optimal water usage and crop management.",
+      "icon": "💧",
+      "color": "bg-brand-green",
+      "features": [
+        "IoT Integration",
+        "Real-time Monitoring",
+        "Weather Adaptation",
+        "Mobile Control"
+      ]
+    }
+  ],
+
+  "importExportServices": [
+    {
+      "id": "agri-equipment",
+      "title": "Agriculture Equipment",
+      "description": "Import and distribution of modern farming machinery and tools.",
+      "icon": "🚜",
+      "products": [
+        "Tractors",
+        "Harvesters",
+        "Irrigation Systems",
+        "Processing Units"
+      ]
+    },
+    {
+      "id": "electronics",
+      "title": "Electronics & IoT",
+      "description": "Smart agricultural technology and monitoring systems.",
+      "icon": "🔌",
+      "products": [
+        "Sensors",
+        "Controllers",
+        "Monitoring Systems",
+        "Data Loggers"
+      ]
+    },
+    {
+      "id": "materials",
+      "title": "Construction Materials",
+      "description": "High-quality materials for agricultural infrastructure.",
+      "icon": "🏗️",
+      "products": [
+        "Steel Structures",
+        "Insulation",
+        "Climate Control",
+        "Building Materials"
+      ]
+    },
+    {
+      "id": "garment",
+      "title": "Garment Accessories",
+      "description": "Premium garment accessories through SNT Corporation.",
+      "icon": "👔",
+      "products": ["Buttons", "Zippers", "Labels", "Packaging"]
+    }
+  ],
+
+  "newsArticles": {
+    "heading": "Latest News & Articles",
+    "subheading": "Stay updated with our latest innovations, project achievements, and insights into the future of agricultural technology and sustainable farming practices.",
+    "articles": [
+      {
+        "id": "dae-contract-2025",
+        "title": "Kajal Enterprise Wins Major DAE Contract for Smart Irrigation Systems",
+        "excerpt": "Our company has been awarded a significant contract by the Department of Agriculture Extension to implement IoT-based irrigation systems across 20 districts, marking a milestone in sustainable agriculture technology.",
+        "image": "https://images.pexels.com/photos/2850290/pexels-photo-2850290.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "category": "Company News",
+        "date": "January 15, 2025",
+        "readTime": "3 min read",
+        "author": "Md Saiful Islam Khan",
+        "featured": true,
+        "tags": ["Government Contract", "IoT", "Irrigation", "DAE"]
+      },
+      {
+        "id": "cold-storage-2025",
+        "title": "Revolutionary Zero-Energy Cooling Chambers Reduce Post-Harvest Losses by 40%",
+        "excerpt": "Our innovative cold storage solutions have demonstrated remarkable success in preserving agricultural produce, significantly reducing waste and improving farmer incomes across rural Bangladesh.",
+        "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "category": "Technology",
+        "date": "January 10, 2025",
+        "readTime": "4 min read",
+        "author": "Dr. Fatima Khatun",
+        "tags": ["Cold Storage", "Innovation", "Post-Harvest", "Technology"]
+      },
+      {
+        "id": "solar-power-2025",
+        "title": "Solar-Powered Agriculture: Transforming Rural Farming Practices",
+        "excerpt": "Explore how our solar irrigation systems are revolutionizing farming practices, providing sustainable energy solutions that reduce costs and environmental impact while increasing agricultural productivity.",
+        "image": "https://images.pexels.com/photos/2132086/pexels-photo-2132086.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "category": "Sustainability",
+        "date": "January 5, 2025",
+        "readTime": "5 min read",
+        "author": "Eng. Nasir Uddin",
+        "tags": [
+          "Solar Energy",
+          "Sustainability",
+          "Rural Development",
+          "Green Technology"
+        ]
+      }
+    ],
+    "categories": {
+      "Company News": {
+        "color": "bg-blue-100 text-brand-blue border-brand-blue"
+      },
+      "Technology": {
+        "color": "bg-green-100 text-brand-green border-green-200"
+      },
+      "Sustainability": {
+        "color": "bg-gray-50 text-brand-green border-emerald-200"
+      }
+    }
+  },
+
+  "clientReviews": {
+    "heading": "What Our Clients Say",
+    "subheading": "Trusted by government agencies and agricultural organizations across Bangladesh. Here's what our clients say about our services and impact.",
+    "reviews": [
+      {
+        "id": "rev1",
+        "name": "Dr. Abdul Rahman",
+        "position": "Director, Department of Agriculture Extension",
+        "organization": "Ministry of Agriculture, Bangladesh",
+        "review": "Kajal Enterprise has consistently delivered exceptional results in our agricultural technology projects. Their CSAWM implementation across 15 districts has revolutionized water management practices and significantly improved farmer productivity.",
+        "rating": 5,
+        "project": "CSAWM Implementation",
+        "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "impact": "15 Districts Transformed",
+        "category": "Government"
+      },
+      {
+        "id": "rev2",
+        "name": "Eng. Fatima Sultana",
+        "position": "Project Manager",
+        "organization": "Agricultural Marketing Department",
+        "review": "The cold storage solutions provided by Kajal Enterprise have been game-changing for our post-harvest management initiatives. Their zero-energy cooling chambers reduced our losses by 40%.",
+        "rating": 5,
+        "project": "Cold Storage Solutions",
+        "image": "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+        "impact": "40% Loss Reduction",
+        "category": "Infrastructure"
+      }
+    ],
+    "stats": {
+      "governmentClients": "25+",
+      "clientSatisfaction": "100%",
+      "successfulProjects": "50+",
+      "yearsOfExperience": "7+"
+    },
+    "cta": {
+      "heading": "Ready to join our satisfied clients?",
+      "buttonText": "Start Your Project Today",
+      "buttonLink": "/contact"
+    }
+  },
+
+  "partners": {
+    "heading": "Partners & Clients",
+    "subheading": "Collaborating with industry leaders to deliver innovative agricultural solutions",
+    "strategicPartners": [
+      {
+        "id": "sensometer",
+        "name": "Sensometer",
+        "description": "Advanced sensor technology for precision agriculture",
+        "logo": "/images/partners/sensometer.png",
+        "logoText": "S",
+        "category": "Technology",
+        "country": "Japan",
+        "since": "2020",
+        "projects": 15
+      },
+      {
+        "id": "radiant",
+        "name": "Radiant Technologies",
+        "description": "Innovative technology solutions for agricultural applications",
+        "logo": "/images/partners/radiant.png",
+        "logoText": "R",
+        "category": "Infrastructure",
+        "country": "South Korea",
+        "since": "2019",
+        "projects": 12
+      },
+      {
+        "id": "rite",
+        "name": "Rite Solutions",
+        "description": "Comprehensive solutions for agricultural infrastructure",
+        "logo": "/images/partners/rite.png",
+        "logoText": "RS",
+        "category": "Solutions",
+        "country": "India",
+        "since": "2021",
+        "projects": 8
+      }
+    ],
+    "majorClient": {
+      "name": "Department of Agriculture Extension (DAE)",
+      "description": "Under Ministry of Agriculture, Government of Bangladesh",
+      "logo": "/images/clients/dae-logo.png",
+      "achievements": [
+        "15+ Districts Coverage",
+        "50+ Projects Completed",
+        "100% Success Rate"
+      ]
+    },
+    "daeProjects": [
+      {
+        "id": "csawm",
+        "name": "CSAWM",
+        "fullName": "Climate Smart Agriculture Water Management",
+        "status": "Completed",
+        "duration": "2021-2023",
+        "budget": "250M BDT",
+        "impact": "12 Districts",
+        "description": "Implementing smart irrigation and water management systems"
+      },
+      {
+        "id": "saddrp",
+        "name": "SADDRP",
+        "fullName": "Sustainable Agricultural Development and Disaster Recovery Project",
+        "status": "Ongoing",
+        "duration": "2023-2025",
+        "budget": "320M BDT",
+        "impact": "8 Districts",
+        "description": "Enhancing agricultural resilience through technology"
+      },
+      {
+        "id": "aiga",
+        "name": "AIGA",
+        "fullName": "Agricultural Infrastructure Growth and Advancement",
+        "status": "Completed",
+        "duration": "2022-2024",
+        "budget": "180M BDT",
+        "impact": "6 Districts",
+        "description": "Modernizing agricultural infrastructure"
+      },
+      {
+        "id": "smart",
+        "name": "SMART",
+        "fullName": "Sustainable Modern Agriculture and Rural Technology",
+        "status": "Ongoing",
+        "duration": "2024-2026",
+        "budget": "280M BDT",
+        "impact": "10 Districts",
+        "description": "Implementing smart farming technologies"
+      }
+    ]
+  }
+}

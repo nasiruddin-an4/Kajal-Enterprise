@@ -45,12 +45,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-brand-green">
-                Kajal Enterprise
-              </h1>
-              <p className="text-xs text-gray-600 -mt-1">
-                Connecting innovation with agriculture
-              </p>
+              <img
+                src="/src/assets/logo.png"
+                alt="Logo"
+                className="w-24 object-fit-cover"
+              />
             </Link>
           </div>
 
@@ -88,7 +87,10 @@ const Navbar = () => {
           </div>
 
           <div>
-            <a href="#" className="hidden md:flex">
+            <a
+              href="#"
+              className="hidden md:inline-flex items-center px-4 py-2 bg-brand-green text-white rounded-md hover:bg-brand-blue transition duration-300 shadow-lg"
+            >
               Contact Now
             </a>
           </div>

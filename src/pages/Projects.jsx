@@ -135,7 +135,7 @@ const Projects = () => {
               Completed Projects
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Successfully delivered solutions that have transformed
               agricultural practices
             </p>
@@ -197,7 +197,7 @@ const Projects = () => {
                       {project.results.map((result, idx) => (
                         <li
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-gray-600"
+                          className="flex items-center gap-2 text-sm text-gray-500"
                         >
                           <svg
                             className="w-5 h-5 text-brand-green"
@@ -239,7 +239,7 @@ const Projects = () => {
               Upcoming Projects
             </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Innovative pipeline of projects shaping the future of agriculture
             </p>
           </div>
@@ -333,7 +333,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+                  <p className="text-gray-500 text-sm mb-6 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -403,7 +403,7 @@ const Projects = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 No projects found
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-500">
                 Try adjusting your search or filter criteria
               </p>
             </div>

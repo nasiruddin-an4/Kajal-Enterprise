@@ -166,7 +166,7 @@ const Contact = () => {
                           {item}
                         </a>
                       ) : (
-                        <p className="text-gray-600 text-sm">{item}</p>
+                        <p className="text-gray-500 text-sm">{item}</p>
                       )}
                     </div>
                   ))}
@@ -187,7 +187,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Send us a Message
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-500">
                   Fill out the form below and we'll get back to you within 24
                   hours. For urgent matters, please call us directly.
                 </p>
@@ -397,7 +397,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Visit Our Office
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-500">
                   We welcome you to visit our office for face-to-face
                   consultations. Please schedule an appointment in advance.
                 </p>
@@ -407,7 +407,7 @@ const Contact = () => {
               <div className="bg-gray-200 h-64 rounded-lg mb-6 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-4xl mb-2">🗺️</div>
-                  <p className="text-gray-600">Interactive Map</p>
+                  <p className="text-gray-500">Interactive Map</p>
                   <p className="text-sm text-gray-500">Mirpur DOHS, Dhaka</p>
                 </div>
               </div>
@@ -484,7 +484,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-500">
               Quick answers to common questions about our services and processes
             </p>
           </div>
@@ -521,7 +521,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>

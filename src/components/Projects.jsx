@@ -61,7 +61,7 @@ const Projects = () => {
             Upcoming Projects
           </h2>
           <div className="w-20 h-1 bg-brand-green mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl mx-auto">
             Discover our innovative pipeline of projects that will shape the
             future of agriculture and technology integration in Bangladesh.
           </p>
@@ -94,7 +94,7 @@ const Projects = () => {
                 {project.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 {project.description}
               </p>
 
@@ -165,7 +165,7 @@ const Projects = () => {
                       <h4 className="font-semibold text-gray-900">
                         {project.title}
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-500">
                         {project.timeline}
                       </p>
                     </div>

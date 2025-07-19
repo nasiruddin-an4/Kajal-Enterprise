@@ -8,7 +8,7 @@ const About = () => {
             About Kajal Enterprise
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark"></div>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-8 leading-relaxed">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto mt-8 leading-relaxed">
             Pioneering agricultural technology solutions since 2018
           </p>
         </div>
@@ -28,12 +28,12 @@ const About = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6">
               Who We Are & What We Do
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-500 leading-relaxed">
               Kajal Enterprise is a pioneering government contractor established
               in 2018, specializing in agricultural technology solutions, import
               & export services, and garment accessories supply.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-500 leading-relaxed">
               Under the leadership of Md Saiful Islam Khan, our dedicated team
               of 14 professionals is committed to revolutionizing agriculture
               through innovative technology and sustainable practices.
@@ -43,13 +43,13 @@ const About = () => {
                 <div className="text-3xl font-bold text-brand-green mb-2">
                   14+
                 </div>
-                <div className="text-gray-600">Professional Team Members</div>
+                <div className="text-gray-500">Professional Team Members</div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                 <div className="text-3xl font-bold text-brand-green mb-2">
                   5+
                 </div>
-                <div className="text-gray-600">Years of Excellence</div>
+                <div className="text-gray-500">Years of Excellence</div>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Mission
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-500 leading-relaxed">
               To transform agricultural practices through innovative technology
               solutions, ensuring sustainable food production while supporting
               farmers with state-of-the-art equipment and systems that enhance
@@ -109,7 +109,7 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Vision
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-500 leading-relaxed">
               To become the leading provider of agricultural technology
               solutions in Bangladesh, creating a sustainable ecosystem where
               traditional farming meets modern innovation, contributing to
@@ -182,7 +182,7 @@ const About = () => {
                 <h4 className="text-xl font-bold text-gray-900 mb-4">
                   {value.title}
                 </h4>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {value.description}
                 </p>
               </div>
