@@ -27,20 +27,20 @@ const Projects = () => {
 
   const getCategoryColor = (category) => {
     const colors = {
-      Infrastructure: "bg-blue-100 text-blue-800 border-blue-200",
+      Infrastructure: "bg-blue-100 text-brand-blue border-brand-blue",
       Technology: "bg-green-100 text-green-800 border-green-200",
-      Community: "bg-purple-100 text-purple-800 border-purple-200",
-      Innovation: "bg-yellow-100 text-yellow-800 border-yellow-200",
+      Community: "bg-gray-50 text-brand-blue border-purple-200",
+      Innovation: "bg-gray-50 text-yellow-800 border-yellow-200",
       Automation: "bg-red-100 text-red-800 border-red-200",
       Government: "bg-indigo-100 text-indigo-800 border-indigo-200",
-      Sustainability: "bg-emerald-100 text-emerald-800 border-emerald-200",
+      Sustainability: "bg-gray-50 text-brand-green border-emerald-200",
     };
     return colors[category] || "bg-gray-100 text-gray-800 border-gray-200";
   };
 
   const getStatusColor = (status) => {
     const colors = {
-      Planning: "bg-blue-500",
+      Planning: "bg-brand-blue",
       "Design Phase": "bg-yellow-500",
       Proposal: "bg-purple-500",
       Research: "bg-green-500",
@@ -220,7 +220,7 @@ const Projects = () => {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-full bg-brand-green hover:bg-brand-green-dark text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                    className="w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors"
                   >
                     View Details
                   </button>
@@ -374,7 +374,7 @@ const Projects = () => {
                   {/* Action Button */}
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="mt-6 w-full bg-brand-green hover:bg-brand-green-dark text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 group"
+                    className="mt-6 w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 group"
                   >
                     <span>View Details</span>
                     <svg

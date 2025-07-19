@@ -130,7 +130,7 @@ const Services = () => {
                 Contact us today to learn more about our innovative solutions
                 and how we can help your agricultural projects succeed.
               </p>
-              <button className="bg-brand-green hover:bg-brand-green-dark text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              <button className="bg-brand-green hover:bg-brand-green text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                 Request a Quote
               </button>
             </div>

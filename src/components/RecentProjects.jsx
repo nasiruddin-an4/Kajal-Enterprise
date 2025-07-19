@@ -23,7 +23,7 @@ const RecentProjects = () => {
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green bg-opacity-5 rounded-full -translate-y-48 translate-x-48"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 bg-opacity-5 rounded-full translate-y-32 -translate-x-32"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-blue bg-opacity-5 rounded-full translate-y-32 -translate-x-32"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
@@ -80,7 +80,7 @@ const RecentProjects = () => {
                   </span>
                 </div>
                 <button
-                  className="text-brand-green hover:text-brand-green-dark font-semibold text-xs transition-colors"
+                  className="text-brand-green hover:text-brand-green font-semibold text-xs transition-colors"
                   onClick={() => openModal(project)}
                 >
                   View Details →
@@ -233,7 +233,7 @@ const RecentProjects = () => {
                       </div>
                       <Link
                         to={`/projects/${selectedProject.id}`}
-                        className="inline-flex items-center text-brand-green hover:text-brand-green-dark font-semibold text-sm"
+                        className="inline-flex items-center text-brand-green hover:text-brand-green font-semibold text-sm"
                       >
                         View Full Case Study
                         <svg
@@ -262,7 +262,7 @@ const RecentProjects = () => {
         <div className="text-center mt-8">
           <Link
             to="/projects"
-            className="inline-flex items-center bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center bg-brand-green hover:bg-brand-green text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             View All Projects
             <svg

@@ -90,7 +90,7 @@ const Hero = () => {
 
           <Link
             to="/contact"
-            className="inline-block bg-brand-green hover:bg-brand-green-dark text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-in"
+            className="inline-block bg-brand-green hover:bg-brand-green text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-in"
           >
             Get in Touch
           </Link>

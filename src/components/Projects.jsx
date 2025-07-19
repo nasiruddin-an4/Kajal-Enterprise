@@ -44,10 +44,10 @@ const Projects = () => {
 
   const getCategoryColor = (category) => {
     const colors = {
-      Infrastructure: "bg-blue-100 text-blue-800",
+      Infrastructure: "bg-blue-100 text-brand-blue",
       Technology: "bg-green-100 text-green-800",
-      Community: "bg-purple-100 text-purple-800",
-      Innovation: "bg-yellow-100 text-yellow-800",
+      Community: "bg-gray-50 text-brand-blue",
+      Innovation: "bg-gray-50 text-yellow-800",
       Automation: "bg-red-100 text-red-800",
     };
     return colors[category] || "bg-gray-100 text-gray-800";

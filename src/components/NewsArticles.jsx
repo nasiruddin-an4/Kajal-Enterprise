@@ -104,10 +104,10 @@ const NewsArticles = () => {
 
   const getCategoryColor = (category) => {
     const colors = {
-      "Company News": "bg-blue-100 text-blue-800 border-blue-200",
+      "Company News": "bg-blue-100 text-brand-blue border-brand-blue",
       Technology: "bg-green-100 text-green-800 border-green-200",
-      Sustainability: "bg-emerald-100 text-emerald-800 border-emerald-200",
-      Partnerships: "bg-purple-100 text-purple-800 border-purple-200",
+      Sustainability: "bg-gray-50 text-brand-green border-emerald-200",
+      Partnerships: "bg-gray-50 text-brand-blue border-purple-200",
       Education: "bg-orange-100 text-orange-800 border-orange-200",
     };
     return colors[category] || "bg-gray-100 text-gray-800 border-gray-200";
@@ -117,7 +117,7 @@ const NewsArticles = () => {
     <section className="py-20 bg-gray-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-brand-green bg-opacity-5 rounded-full -translate-y-36 -translate-x-36"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 bg-opacity-5 rounded-full translate-y-48 translate-x-48"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue bg-opacity-5 rounded-full translate-y-48 translate-x-48"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
@@ -209,7 +209,7 @@ const NewsArticles = () => {
                     </div>
                   </div>
 
-                  <button className="bg-brand-green hover:bg-brand-green-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                  <button className="bg-brand-green hover:bg-brand-green text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                     Read More
                   </button>
                 </div>
@@ -288,7 +288,7 @@ const NewsArticles = () => {
                     </span>
                   </div>
 
-                  <button className="text-brand-green hover:text-brand-green-dark font-semibold text-sm transition-colors">
+                  <button className="text-brand-green hover:text-brand-green font-semibold text-sm transition-colors">
                     Read More →
                   </button>
                 </div>

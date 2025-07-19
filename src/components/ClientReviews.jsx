@@ -112,7 +112,7 @@ const ClientReviews = () => {
     <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green bg-opacity-10 rounded-full -translate-y-48 translate-x-48"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500 bg-opacity-10 rounded-full translate-y-36 -translate-x-36"></div>
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-blue bg-opacity-10 rounded-full translate-y-36 -translate-x-36"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
@@ -306,7 +306,7 @@ const ClientReviews = () => {
           <p className="text-xl text-gray-300 mb-6">
             Ready to join our satisfied clients?
           </p>
-          <button className="bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="bg-brand-green hover:bg-brand-green text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
             Start Your Project Today
           </button>
         </div>

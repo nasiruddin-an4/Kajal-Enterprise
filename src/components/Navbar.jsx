@@ -88,7 +88,9 @@ const Navbar = () => {
           </div>
 
           <div>
-            <a href="#">Contact Now</a>
+            <a href="#" className="hidden md:flex">
+              Contact Now
+            </a>
           </div>
 
           {/* Mobile menu button */}

@@ -65,7 +65,7 @@ const About = () => {
       description:
         "Maintaining the highest standards of professional conduct in all our business operations and client relationships.",
       icon: "🎯",
-      color: "bg-blue-500",
+      color: "bg-brand-blue",
     },
     {
       title: "Integrity",

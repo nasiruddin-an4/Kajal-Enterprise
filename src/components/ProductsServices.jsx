@@ -147,7 +147,7 @@ const ProductsServices = () => {
                     <span className="text-brand-green font-semibold">
                       {product.price}
                     </span>
-                    <button className="px-4 py-2 bg-brand-green text-white rounded-lg hover:bg-brand-green-dark transition-colors">
+                    <button className="px-4 py-2 bg-brand-green text-white rounded-lg hover:bg-brand-green transition-colors">
                       Get Quote
                     </button>
                   </div>
@@ -184,7 +184,7 @@ const ProductsServices = () => {
         <div className="mt-16 text-center">
           <a
             href="/contact"
-            className="inline-flex items-center bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center bg-brand-green hover:bg-brand-green text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Request Custom Solution
             <svg

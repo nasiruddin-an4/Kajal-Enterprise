@@ -103,7 +103,7 @@ const TeamMembers = () => {
                       <div className="mt-4 pt-4 border-t border-gray-100">
                         <Link
                           to={`/team/${member.id}`}
-                          className="inline-flex items-center justify-center w-full bg-brand-green hover:bg-brand-green-dark text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                          className="inline-flex items-center justify-center w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors"
                         >
                           <span>View Full Profile</span>
                           <svg

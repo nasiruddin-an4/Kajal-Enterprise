@@ -154,7 +154,7 @@ body {
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-brand-green hover:bg-brand-green-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105;
+  @apply bg-brand-green hover:bg-brand-green text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105;
 }
 
 .btn-secondary {

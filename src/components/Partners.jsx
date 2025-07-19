@@ -111,7 +111,7 @@ const Partners = () => {
                     className={`px-3 py-1 text-sm rounded-full ${
                       project.status === "Completed"
                         ? "bg-green-100 text-green-800"
-                        : "bg-blue-100 text-blue-800"
+                        : "bg-blue-100 text-brand-blue"
                     }`}
                   >
                     {project.status}

@@ -55,7 +55,7 @@ const Contact = () => {
         "Mirpur DOHS, Dhaka - 1216",
         "Bangladesh",
       ],
-      color: "bg-blue-500",
+      color: "bg-brand-blue",
     },
     {
       title: "Email",
@@ -376,7 +376,7 @@ const Contact = () => {
                   className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
                     isSubmitting
                       ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-brand-green hover:bg-brand-green-dark transform hover:scale-105"
+                      : "bg-brand-green hover:bg-brand-green transform hover:scale-105"
                   }`}
                 >
                   {isSubmitting ? (
