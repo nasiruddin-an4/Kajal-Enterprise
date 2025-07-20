@@ -1,135 +1,13 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import aboutData from "../data/about.json";
+import teadDetails from "../data/teamDetails.json";
+import { motion } from "framer-motion";
 
 const About = () => {
-  const stats = [
-    { label: "Years of Experience", value: "7+", icon: "📅" },
-    { label: "Team Members", value: "14", icon: "👥" },
-    { label: "Successful Projects", value: "50+", icon: "🎯" },
-    { label: "Government Contracts", value: "25+", icon: "🏛️" },
-  ];
-
-  const timeline = [
-    {
-      year: "2018",
-      title: "Company Founded",
-      description:
-        "Kajal Enterprise established by Md Saiful Islam Khan with a vision to revolutionize agriculture through technology.",
-    },
-    {
-      year: "2019",
-      title: "First Government Contract",
-      description:
-        "Secured first major contract with Department of Agriculture Extension (DAE) for greenhouse installations.",
-    },
-    {
-      year: "2020",
-      title: "Technology Integration",
-      description:
-        "Introduced IoT-based precision agriculture solutions and smart irrigation systems.",
-    },
-    {
-      year: "2021",
-      title: "Partnership Expansion",
-      description:
-        "Formed strategic partnerships with Sensometer, Radiant Technologies, and Rite Solutions.",
-    },
-    {
-      year: "2022",
-      title: "Cold Storage Solutions",
-      description:
-        "Launched zero energy cooling chambers and specialized storage systems for agricultural produce.",
-    },
-    {
-      year: "2023",
-      title: "Solar Integration",
-      description:
-        "Implemented solar-powered irrigation systems promoting sustainable farming practices.",
-    },
-    {
-      year: "2024",
-      title: "Import & Export Expansion",
-      description:
-        "Expanded services to include agricultural equipment import and garment accessories supply.",
-    },
-    {
-      year: "2025",
-      title: "Future Innovation",
-      description:
-        "Planning data centers, vertical farming, and automated packaging solutions.",
-    },
-  ];
-
-  const values = [
-    {
-      title: "Professionalism",
-      description:
-        "Maintaining the highest standards of professional conduct in all our business operations and client relationships.",
-      icon: "🎯",
-      color: "bg-brand-blue",
-    },
-    {
-      title: "Integrity",
-      description:
-        "Building trust through honest, transparent, and ethical business practices in every interaction and project.",
-      icon: "🛡️",
-      color: "bg-green-500",
-    },
-    {
-      title: "Innovation",
-      description:
-        "Embracing cutting-edge technology and creative solutions to solve agricultural challenges.",
-      icon: "💡",
-      color: "bg-yellow-500",
-    },
-    {
-      title: "Sustainability",
-      description:
-        "Committed to environmentally responsible practices that ensure long-term agricultural productivity.",
-      icon: "🌱",
-      color: "bg-emerald-500",
-    },
-    {
-      title: "Quality Excellence",
-      description:
-        "Delivering superior products and services that exceed client expectations and industry standards.",
-      icon: "⭐",
-      color: "bg-purple-500",
-    },
-    {
-      title: "Continuous Improvement",
-      description:
-        "Constantly evolving and adapting to new technologies and methods to deliver better solutions.",
-      icon: "🔄",
-      color: "bg-indigo-500",
-    },
-  ];
-
-  const team = [
-    {
-      name: "Md Saiful Islam Khan",
-      position: "Proprietor & Founder",
-      description:
-        "Visionary leader with extensive experience in agricultural technology and government contracting.",
-      image:
-        "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-    },
-    {
-      name: "Technical Team",
-      position: "8 Specialists",
-      description:
-        "Expert engineers and technicians specializing in IoT, solar systems, and agricultural technology.",
-      image:
-        "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-    },
-    {
-      name: "Operations Team",
-      position: "6 Professionals",
-      description:
-        "Dedicated professionals managing project execution, quality control, and client relations.",
-      image:
-        "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-    },
-  ];
+  const { hero, overview, missionVision, values, timeline, team, cta } =
+    aboutData;
+  const { teamDetails } = teadDetails;
 
   useEffect(() => {
     const observerOptions = {
@@ -153,42 +31,60 @@ const About = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section - Enhanced */}
-      <section className="relative h-[600px] bg-gradient-to-br from-brand-green to-brand-green-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-[700px] bg-gradient-to-br from-brand-green to-brand-green-dark text-white overflow-hidden">
+        {/* Background with Parallax Effect */}
         <div className="absolute inset-0">
-          <div
-            className="h-full w-full bg-cover bg-center"
+          <motion.div
+            initial={{ scale: 1.2 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="h-full w-full bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: `url('https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg')`,
+              backgroundImage: `url('${hero.background}')`,
               filter: "brightness(0.3)",
             }}
-          ></div>
+          ></motion.div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-          <div className="max-w-5xl">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
-              Pioneering Agricultural Innovation
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl"
+          >
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              {hero.title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 animate-slide-in opacity-90">
-              Since 2018, weve been revolutionizing farming practices through
-              technology and sustainable solutions.
+            <p className="text-xl md:text-2xl mb-12 opacity-90">
+              {hero.subtitle}
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-in">
-              {stats.map((stat, index) => (
-                <div
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {hero.stats.map((stat, index) => (
+                <motion.div
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm px-6 py-4 rounded-xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white/10 backdrop-blur-sm px-6 py-4 rounded-xl hover:bg-white/20 transition-all duration-300"
                 >
-                  <div className="text-3xl mb-1">{stat.icon}</div>
+                  <div className="text-3xl mb-2">{stat.icon}</div>
                   <div className="text-2xl font-bold">{stat.value}</div>
                   <div className="text-sm opacity-80">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Overview Section */}
@@ -217,7 +113,7 @@ const About = () => {
             <div className="relative observe-animation opacity-0">
               <div className="absolute inset-0 bg-brand-green rounded-3xl transform rotate-3 opacity-10"></div>
               <img
-                src="https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/public/slide-4.jpeg"
                 alt="Modern Agriculture"
                 className="relative rounded-3xl transform hover:scale-105 transition-transform duration-500"
               />
@@ -245,7 +141,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-brand-green to-brand-green-dark text-white p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+            <div className="bg-gradient-to-br from-brand-green to-green-900 text-white p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6">
                 <span className="text-3xl">🔮</span>
               </div>
@@ -374,7 +270,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-brand-green to-brand-green-dark text-white">
+      <section className="py-24 bg-gradient-to-br from-brand-green to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-8">
             Ready to Transform Agriculture?

@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "title": "Pioneering Agricultural Innovation",
+    "subtitle": "Since 2018, we've been revolutionizing farming practices through technology and sustainable solutions.",
+    "background": "/slide-5.jpeg",
+    "stats": [
+      { "label": "Years of Experience", "value": "7+", "icon": "📅" },
+      { "label": "Team Members", "value": "14", "icon": "👥" },
+      { "label": "Successful Projects", "value": "50+", "icon": "🎯" },
+      { "label": "Government Contracts", "value": "25+", "icon": "🏛️" }
+    ]
+  },
+  "overview": {
+    "title": "Who We Are & What We Do",
+    "paragraphs": [
+      "Kajal Enterprise is a pioneering government contractor established in 2018, specializing in agricultural technology solutions, import & export services, and garment accessories supply.",
+      "Under the leadership of Md Saiful Islam Khan, our dedicated team of 14 professionals is committed to revolutionizing agriculture through innovative technology and sustainable practices."
+    ],
+    "image": "/public/slide-2.jpeg"
+  },
+  "missionVision": {
+    "mission": {
+      "icon": "🎯",
+      "title": "Our Mission",
+      "description": "To transform agricultural practices through innovative technology solutions, ensuring sustainable food production while supporting farmers with state-of-the-art equipment and systems that enhance productivity and reduce environmental impact."
+    },
+    "vision": {
+      "icon": "🔮",
+      "title": "Our Vision",
+      "description": "To become the leading provider of agricultural technology solutions in Bangladesh, creating a sustainable ecosystem where traditional farming meets modern innovation, contributing to national food security and economic growth."
+    }
+  },
+  "values": [
+    {
+      "title": "Professionalism",
+      "description": "Maintaining the highest standards of professional conduct in all our business operations and client relationships.",
+      "icon": "🎯",
+      "color": "bg-brand-blue"
+    },
+    {
+      "title": "Integrity",
+      "description": "Building trust through honest, transparent, and ethical business practices in every interaction and project.",
+      "icon": "🛡️",
+      "color": "bg-green-500"
+    },
+    {
+      "title": "Innovation",
+      "description": "Embracing cutting-edge technology and creative solutions to solve agricultural challenges.",
+      "icon": "💡",
+      "color": "bg-yellow-500"
+    },
+    {
+      "title": "Sustainability",
+      "description": "Committed to environmentally responsible practices that ensure long-term agricultural productivity.",
+      "icon": "🌱",
+      "color": "bg-emerald-500"
+    },
+    {
+      "title": "Quality Excellence",
+      "description": "Delivering superior products and services that exceed client expectations and industry standards.",
+      "icon": "⭐",
+      "color": "bg-purple-500"
+    },
+    {
+      "title": "Continuous Improvement",
+      "description": "Constantly evolving and adapting to new technologies and methods to deliver better solutions.",
+      "icon": "🔄",
+      "color": "bg-indigo-500"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2018",
+      "title": "Company Founded",
+      "description": "Kajal Enterprise established by Md Saiful Islam Khan with a vision to revolutionize agriculture through technology."
+    },
+    {
+      "year": "2019",
+      "title": "First Government Contract",
+      "description": "Secured first major contract with Department of Agriculture Extension (DAE) for greenhouse installations."
+    },
+    {
+      "year": "2020",
+      "title": "Technology Integration",
+      "description": "Introduced IoT-based precision agriculture solutions and smart irrigation systems."
+    },
+    {
+      "year": "2021",
+      "title": "Partnership Expansion",
+      "description": "Formed strategic partnerships with Sensometer, Radiant Technologies, and Rite Solutions."
+    },
+    {
+      "year": "2022",
+      "title": "Cold Storage Solutions",
+      "description": "Launched zero energy cooling chambers and specialized storage systems for agricultural produce."
+    },
+    {
+      "year": "2023",
+      "title": "Solar Integration",
+      "description": "Implemented solar-powered irrigation systems promoting sustainable farming practices."
+    },
+    {
+      "year": "2024",
+      "title": "Import & Export Expansion",
+      "description": "Expanded services to include agricultural equipment import and garment accessories supply."
+    },
+    {
+      "year": "2025",
+      "title": "Future Innovation",
+      "description": "Planning data centers, vertical farming, and automated packaging solutions."
+    }
+  ],
+  "team": [
+    {
+      "name": "Md Saiful Islam Khan",
+      "position": "Proprietor & Founder",
+      "description": "Visionary leader with extensive experience in agricultural technology and government contracting.",
+      "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+      "social": {
+        "linkedin": "#",
+        "twitter": "#",
+        "facebook": "#"
+      }
+    },
+    {
+      "name": "Technical Team",
+      "position": "8 Specialists",
+      "description": "Expert engineers and technicians specializing in IoT, solar systems, and agricultural technology.",
+      "image": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+      "stats": {
+        "projects": "30+",
+        "expertise": "IoT & Solar"
+      }
+    },
+    {
+      "name": "Operations Team",
+      "position": "6 Professionals",
+      "description": "Dedicated professionals managing project execution, quality control, and client relations.",
+      "image": "https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg",
+      "stats": {
+        "projects": "20+",
+        "expertise": "Project Management"
+      }
+    }
+  ],
+  "cta": {
+    "title": "Ready to Transform Agriculture?",
+    "description": "Join us in revolutionizing farming practices through innovative technology and sustainable solutions.",
+    "buttonText": "Contact Us Today",
+    "buttonLink": "/contact"
+  }
+}

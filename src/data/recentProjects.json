@@ -11,7 +11,7 @@
       "client": "Department of Agriculture Extension",
       "impact": "15 Districts Covered",
       "budget": "$350K",
-      "location": "Multiple Districts, Bangladesh",
+      "location": "Multiple Districts",
       "features": [
         "IoT Sensors",
         "Water Management",
@@ -42,6 +42,7 @@
         "Solar Power",
         "Water Efficiency",
         "Remote Monitoring",
+        "Maintenance Support",
         "Maintenance Support"
       ],
       "results": [
@@ -72,7 +73,8 @@
       "results": [
         "Reduced post-harvest losses by 40%",
         "Extended shelf life of produce",
-        "Increased farmer income"
+        "Increased farmer income",
+        "Temperature Monitoring"
       ],
       "image": "/slide-3.jpeg"
     },

@@ -106,7 +106,7 @@ const Contact = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-green to-brand-green-dark text-white py-20">
+      <section className="bg-gradient-to-br from-brand-green to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
@@ -132,13 +132,13 @@ const Contact = () => {
       </section>
 
       {/* Contact Information Cards */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300"
               >
                 <div
                   className={`${info.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}

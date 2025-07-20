@@ -78,8 +78,7 @@ const Projects = () => {
           <div
             className="h-full w-full bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/1461671/pexels-photo-1461671.jpeg')",
+              backgroundImage: "url('public/slide-1.jpg')",
               filter: "brightness(0.4)",
             }}
           ></div>
@@ -131,21 +130,21 @@ const Projects = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-brand-green mb-4">
               Completed Projects
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
+
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Successfully delivered solutions that have transformed
               agricultural practices
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {projectsData.completedProjects.map((project) => (
               <div
                 key={project.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
+                className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -155,34 +154,24 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-2xl">{project.icon}</span>
-                      <span
-                        className={`px-3 py-1 text-sm rounded-full ${getCategoryColor(
-                          project.category
-                        )}`}
-                      >
-                        {project.category}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                    <h3 className="text-2xl font-bold">{project.title}</h3>
                     <p className="text-white/80">{project.subtitle}</p>
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="p-4">
+                  <div className="grid grid-cols-2 gap-2 mb-1">
                     {[
                       { label: "Budget", value: project.budget },
                       { label: "Impact", value: project.impact },
                       { label: "Location", value: project.location },
                       { label: "Completed", value: project.completedDate },
                     ].map((item, idx) => (
-                      <div key={idx} className="bg-gray-50 p-3 rounded-lg">
-                        <span className="text-sm text-gray-500 block mb-1">
+                      <div key={idx} className="bg-gray-50 p-2 rounded-lg">
+                        <span className="text-sm text-gray-500 block ">
                           {item.label}
                         </span>
-                        <span className="font-semibold text-gray-900">
+                        <span className="text-sm font-semibold text-gray-900">
                           {item.value}
                         </span>
                       </div>
@@ -235,10 +224,10 @@ const Projects = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-brand-green mb-4">
               Upcoming Projects
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-brand-green to-brand-green-dark mx-auto mb-8"></div>
+
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Innovative pipeline of projects shaping the future of agriculture
             </p>
@@ -293,7 +282,7 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 observe-animation opacity-0"
+                className="group bg-white rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 observe-animation opacity-0 border"
               >
                 {/* Project Image */}
                 <div className="relative h-48 rounded-t-2xl overflow-hidden">
@@ -316,21 +305,11 @@ const Projects = () => {
                 </div>
 
                 {/* Project Details */}
-                <div className="p-6">
+                <div className="p-4">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-gray-900">
                       {project.title}
                     </h3>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`w-2 h-2 rounded-full ${getStatusColor(
-                          project.status
-                        )}`}
-                      ></div>
-                      <span className="text-xs text-gray-500">
-                        {project.status}
-                      </span>
-                    </div>
                   </div>
 
                   <p className="text-gray-500 text-sm mb-6 line-clamp-3">
@@ -412,7 +391,7 @@ const Projects = () => {
       </section>
 
       {/* Innovation Statement */}
-      <section className="py-16 bg-gradient-to-r from-brand-green to-brand-green-dark text-white">
+      <section className="py-16 bg-gradient-to-r from-brand-green to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl font-bold mb-6">Innovation at the Core</h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
