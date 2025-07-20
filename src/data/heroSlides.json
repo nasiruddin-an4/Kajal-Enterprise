@@ -5,7 +5,7 @@
       "title": "Smart Farming with IoT Integration",
       "subtitle": "Revolutionizing Irrigation for Maximum Crop Growth",
       "description": "Utilize real-time data and smart sensors to enhance water efficiency and drive sustainable farming practices.",
-      "image": "/public/slide-1.jpg",
+      "image": "/slide-1.jpg",
       "cta": {
         "text": "View Projects",
         "link": "/projects"
@@ -16,7 +16,7 @@
       "title": "Eco-Friendly Produce Storage",
       "subtitle": "Zero-Energy Cooling for Freshness Retention",
       "description": "Keep fruits and vegetables fresher for longer with our energy-saving cold rooms and zero-energy cooling technologies.",
-      "image": "/public/slide-2.jpeg",
+      "image": "/slide-2.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/about"
@@ -27,7 +27,7 @@
       "title": "Innovative Crop Preservation",
       "subtitle": "Advanced Cooling Chambers Built for Farmers",
       "description": "Protect your harvest with our sustainable and technologically advanced storage solutions designed to reduce post-harvest losses.",
-      "image": "/public/slide-3.jpeg",
+      "image": "/slide-3.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/projects"
@@ -38,7 +38,7 @@
       "title": "Next-Gen Agricultural Storage",
       "subtitle": "Smart Cooling Systems Tailored to Your Needs",
       "description": "Customized, scalable cooling rooms engineered for efficiency, helping you store your produce the smart way.",
-      "image": "/public/slide-4.jpeg",
+      "image": "/slide-4.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/projects"
@@ -49,7 +49,7 @@
       "title": "Preserve Produce with Zero Energy Cooling",
       "subtitle": "Sustainable Solutions for Modern Agriculture",
       "description": "Adopt environmentally friendly storage chambers that minimize energy use while maximizing freshness and quality.",
-      "image": "/public/slide-5.jpeg",
+      "image": "/slide-5.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/projects"
