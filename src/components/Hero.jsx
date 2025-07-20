@@ -109,7 +109,7 @@ const Hero = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 -mt-10">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 -mt-10 max-w-5xl mx-auto">
                 {slide.title}
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-white/90">

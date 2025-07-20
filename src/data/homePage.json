@@ -159,9 +159,9 @@
     },
     {
       "id": "irrigation",
-      "title": "Smart Irrigation Systems",
+      "title": "Next-Gen Agricultural Storage",
       "description": "IoT-based precision irrigation systems for optimal water usage and crop management.",
-      "icon": "💧",
+      "icon": "📊",
       "color": "bg-brand-green",
       "features": [
         "IoT Integration",
@@ -226,7 +226,7 @@
         "id": "dae-contract-2025",
         "title": "Kajal Enterprise Wins Major DAE Contract for Smart Irrigation Systems",
         "excerpt": "Our company has been awarded a significant contract by the Department of Agriculture Extension to implement IoT-based irrigation systems across 20 districts, marking a milestone in sustainable agriculture technology.",
-        "image": "https://images.pexels.com/photos/2850290/pexels-photo-2850290.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "image": "/public/slide-1.jpg",
         "category": "Company News",
         "date": "January 15, 2025",
         "readTime": "3 min read",
@@ -238,7 +238,7 @@
         "id": "cold-storage-2025",
         "title": "Revolutionary Zero-Energy Cooling Chambers Reduce Post-Harvest Losses by 40%",
         "excerpt": "Our innovative cold storage solutions have demonstrated remarkable success in preserving agricultural produce, significantly reducing waste and improving farmer incomes across rural Bangladesh.",
-        "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "image": "/public/slide-2.jpeg",
         "category": "Technology",
         "date": "January 10, 2025",
         "readTime": "4 min read",
@@ -249,7 +249,7 @@
         "id": "solar-power-2025",
         "title": "Solar-Powered Agriculture: Transforming Rural Farming Practices",
         "excerpt": "Explore how our solar irrigation systems are revolutionizing farming practices, providing sustainable energy solutions that reduce costs and environmental impact while increasing agricultural productivity.",
-        "image": "https://images.pexels.com/photos/2132086/pexels-photo-2132086.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "image": "/public/slide-3.jpeg",
         "category": "Sustainability",
         "date": "January 5, 2025",
         "readTime": "5 min read",
@@ -358,13 +358,14 @@
     "majorClient": {
       "name": "Department of Agriculture Extension (DAE)",
       "description": "Under Ministry of Agriculture, Government of Bangladesh",
-      "logo": "/images/clients/dae-logo.png",
+      "logo": "/public/slide-2.jpeg",
       "achievements": [
         "15+ Districts Coverage",
         "50+ Projects Completed",
         "100% Success Rate"
       ]
     },
+
     "daeProjects": [
       {
         "id": "csawm",

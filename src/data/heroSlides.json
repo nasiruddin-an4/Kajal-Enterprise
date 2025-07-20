@@ -2,10 +2,10 @@
   "slides": [
     {
       "id": "slide-1",
-      "title": "Precision Agriculture & IoT Solutions",
-      "subtitle": "Smart Irrigation Systems for Modern Farming",
-      "description": "Leveraging IoT technology to optimize water usage and improve crop yields",
-      "image": "https://images.pexels.com/photos/2850290/pexels-photo-2850290.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "title": "Smart Farming with IoT Integration",
+      "subtitle": "Revolutionizing Irrigation for Maximum Crop Growth",
+      "description": "Utilize real-time data and smart sensors to enhance water efficiency and drive sustainable farming practices.",
+      "image": "/public/slide-1.jpg",
       "cta": {
         "text": "View Projects",
         "link": "/projects"
@@ -13,10 +13,10 @@
     },
     {
       "id": "slide-2",
-      "title": "Sustainable Storage Solutions",
-      "subtitle": "Cold Rooms & Zero Energy Cooling Chambers",
-      "description": "Energy-efficient storage solutions for extending produce shelf life",
-      "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "title": "Eco-Friendly Produce Storage",
+      "subtitle": "Zero-Energy Cooling for Freshness Retention",
+      "description": "Keep fruits and vegetables fresher for longer with our energy-saving cold rooms and zero-energy cooling technologies.",
+      "image": "/public/slide-2.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/about"
@@ -24,10 +24,32 @@
     },
     {
       "id": "slide-3",
-      "title": "Sustainable Storage Solutions",
-      "subtitle": "Cold Rooms & Zero Energy Cooling Chambers",
-      "description": "Energy-efficient storage solutions for extending produce shelf life",
-      "image": "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+      "title": "Innovative Crop Preservation",
+      "subtitle": "Advanced Cooling Chambers Built for Farmers",
+      "description": "Protect your harvest with our sustainable and technologically advanced storage solutions designed to reduce post-harvest losses.",
+      "image": "/public/slide-3.jpeg",
+      "cta": {
+        "text": "Learn More",
+        "link": "/projects"
+      }
+    },
+    {
+      "id": "slide-4",
+      "title": "Next-Gen Agricultural Storage",
+      "subtitle": "Smart Cooling Systems Tailored to Your Needs",
+      "description": "Customized, scalable cooling rooms engineered for efficiency, helping you store your produce the smart way.",
+      "image": "/public/slide-4.jpeg",
+      "cta": {
+        "text": "Learn More",
+        "link": "/projects"
+      }
+    },
+    {
+      "id": "slide-5",
+      "title": "Preserve Produce with Zero Energy Cooling",
+      "subtitle": "Sustainable Solutions for Modern Agriculture",
+      "description": "Adopt environmentally friendly storage chambers that minimize energy use while maximizing freshness and quality.",
+      "image": "/public/slide-5.jpeg",
       "cta": {
         "text": "Learn More",
         "link": "/projects"
