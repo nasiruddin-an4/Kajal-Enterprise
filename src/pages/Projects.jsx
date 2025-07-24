@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import projectsData from "../data/recentProjects.json";
 
 const Projects = () => {
@@ -162,7 +163,7 @@ const Projects = () => {
                 <div className="p-4">
                   <div className="grid grid-cols-2 gap-2 mb-1">
                     {[
-                      { label: "Budget", value: project.budget },
+                      // { label: "Budget", value: project.budget },
                       { label: "Impact", value: project.impact },
                       { label: "Location", value: project.location },
                       { label: "Completed", value: project.completedDate },
@@ -207,12 +208,13 @@ const Projects = () => {
                     </ul>
                   </div>
 
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center justify-center gap-2 group"
                   >
-                    View Details
-                  </button>
+                    <span>View Details</span>
+                    <i className="ri-arrow-right-line transform group-hover:translate-x-1 transition-transform"></i>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -326,14 +328,14 @@ const Projects = () => {
                         {project.timeline}
                       </span>
                     </div>
-                    <div className="bg-gray-50 p-3 rounded-lg">
+                    {/* <div className="bg-gray-50 p-3 rounded-lg">
                       <span className="text-xs text-gray-500 block mb-1">
                         Budget
                       </span>
                       <span className="font-semibold text-brand-green">
                         {project.budget}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Features Tags */}
@@ -351,25 +353,13 @@ const Projects = () => {
                   </div>
 
                   {/* Action Button */}
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="mt-6 w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 group"
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="mt-6 w-full bg-brand-green hover:bg-brand-green text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center justify-center gap-2 group"
                   >
                     <span>View Details</span>
-                    <svg
-                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
+                    <i className="ri-arrow-right-line transform group-hover:translate-x-1 transition-transform"></i>
+                  </Link>
                 </div>
               </div>
             ))}

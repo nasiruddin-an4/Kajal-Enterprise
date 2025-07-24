@@ -8,11 +8,14 @@ const ProjectDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const foundProject = projectsData.completedProjects.find(
-      (p) => p.id === id
-    );
-    setProject(foundProject);
-    setLoading(false);
+    const findProject = () => {
+      const completed = projectsData.completedProjects.find((p) => p.id === id);
+      const upcoming = projectsData.upcomingProjects.find((p) => p.id === id);
+      setProject(completed || upcoming);
+      setLoading(false);
+    };
+
+    findProject();
   }, [id]);
 
   if (loading) {
@@ -30,8 +33,8 @@ const ProjectDetails = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Project Not Found
           </h2>
-          <Link to="/" className="text-brand-green hover:underline">
-            Return to Home
+          <Link to="/projects" className="text-brand-green hover:underline">
+            Return to Projects
           </Link>
         </div>
       </div>
@@ -42,8 +45,8 @@ const ProjectDetails = () => {
     <div className="pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex mb-8" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-2">
+        <nav className="mb-8">
+          <ol className="flex items-center space-x-2">
             <li>
               <Link to="/" className="text-gray-500 hover:text-brand-green">
                 Home
@@ -65,23 +68,29 @@ const ProjectDetails = () => {
           </ol>
         </nav>
 
-        {/* Project Hero */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
-          <div className="relative h-96">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <span className="bg-white/90 text-brand-green px-4 py-2 rounded-full text-sm font-medium mb-4 inline-block">
+        {/* Hero Section */}
+        <div className="relative h-[500px] rounded-2xl overflow-hidden mb-12">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="max-w-3xl">
+              <span
+                className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 ${
+                  project.status
+                    ? "bg-brand-green text-white"
+                    : "bg-white text-brand-green"
+                }`}
+              >
                 {project.category}
               </span>
-              <h1 className="text-4xl font-bold text-white mb-2">
+              <h1 className="text-4xl font-bold text-white mb-4">
                 {project.title}
               </h1>
-              <p className="text-white/90 text-xl">{project.subtitle}</p>
+              <p className="text-xl text-white/90">{project.subtitle}</p>
             </div>
           </div>
         </div>
@@ -89,8 +98,7 @@ const ProjectDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Project Description */}
-            <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div className="bg-white rounded-2xl shadow-sm p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Project Overview
               </h2>
@@ -98,92 +106,112 @@ const ProjectDetails = () => {
                 {project.description}
               </p>
 
-              {/* Features */}
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Key Features
-              </h3>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {project.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
-                      <i className="ri-check-line text-brand-green text-sm"></i>
+              {/* Key Features */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Key Features
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {project.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="mt-1">
+                        <svg
+                          className="w-5 h-5 text-brand-green"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-gray-600">{feature}</span>
                     </div>
-                    <span className="text-gray-600">{feature}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              {/* Results */}
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Project Results
-              </h3>
-              <div className="bg-gray-50 rounded-xl p-6">
-                <ul className="space-y-4">
-                  {project.results.map((result, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i className="ri-arrow-right-line text-brand-green"></i>
-                      </div>
-                      <span className="text-gray-700">{result}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Results/Impact */}
+              {project.results && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    Project Results
+                  </h3>
+                  <div className="bg-gray-50 rounded-xl p-6">
+                    <ul className="space-y-4">
+                      {project.results.map((result, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="mt-1">
+                            <svg
+                              className="w-5 h-5 text-brand-green"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </div>
+                          <span className="text-gray-600">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+            <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-24">
               <h3 className="text-lg font-bold text-gray-900 mb-6">
                 Project Details
               </h3>
 
-              {/* Project Stats */}
               <div className="space-y-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">
-                    Client
+                    Budget
                   </span>
-                  <p className="font-semibold text-gray-900">
-                    {project.client}
-                  </p>
+                  <span className="font-semibold text-brand-green">
+                    {project.budget}
+                  </span>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <span className="text-sm text-gray-500 block mb-1">
+                    Timeline
+                  </span>
+                  <span className="font-semibold text-gray-900">
+                    {project.timeline || project.completedDate}
+                  </span>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">
                     Location
                   </span>
-                  <p className="font-semibold text-gray-900">
+                  <span className="font-semibold text-gray-900">
                     {project.location}
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <span className="text-sm text-gray-500 block mb-1">
-                    Budget
                   </span>
-                  <p className="font-semibold text-brand-green">
-                    {project.budget}
-                  </p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">
                     Impact
                   </span>
-                  <p className="font-semibold text-brand-green">
+                  <span className="font-semibold text-gray-900">
                     {project.impact}
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <span className="text-sm text-gray-500 block mb-1">
-                    Completed Date
                   </span>
-                  <p className="font-semibold text-gray-900">
-                    {project.completedDate}
-                  </p>
                 </div>
               </div>
 
@@ -193,7 +221,7 @@ const ProjectDetails = () => {
                   to="/contact"
                   className="block w-full bg-brand-green hover:bg-opacity-90 text-white text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
-                  Start Similar Project
+                  Discuss Similar Project
                 </Link>
               </div>
             </div>

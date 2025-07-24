@@ -44,12 +44,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
+            <Link to="/" className="flex-shrink-0 flex items-center gap-2">
               <img
                 src="/logo.png"
                 alt="Logo"
                 className="w-24 object-fit-cover"
               />
+              <h2 className="text-2xl font-semibold">Kajal Enterprise</h2>
             </Link>
           </div>
 
