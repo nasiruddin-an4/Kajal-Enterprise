@@ -1,4 +1,5 @@
 import { useState } from "react";
+import contactData from "../data/contact.json";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [openFAQ, setOpenFAQ] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -102,6 +105,10 @@ const Contact = () => {
     "$500K+",
     "To be discussed",
   ];
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
 
   return (
     <div className="pt-16">
@@ -477,53 +484,123 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
+      {/* Enhanced FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-brand-green mb-4">
+              {contactData.faq.heading}
             </h2>
-            <p className="text-gray-500">
-              Quick answers to common questions about our services and processes
+            <p className="text-xl text-gray-600">
+              {contactData.faq.subheading}
             </p>
           </div>
 
-          <div className="space-y-6">
-            {[
-              {
-                question: "What types of agricultural projects do you handle?",
-                answer:
-                  "We specialize in greenhouse installations, cold storage solutions, IoT-based irrigation systems, solar power integration, and agricultural equipment import. We also provide consulting services for sustainable farming practices.",
-              },
-              {
-                question: "How long does a typical project take to complete?",
-                answer:
-                  "Project timelines vary depending on scope and complexity. Small installations typically take 2-4 weeks, while larger government contracts may take 3-6 months. We provide detailed timelines during the consultation phase.",
-              },
-              {
-                question: "Do you provide maintenance and support services?",
-                answer:
-                  "Yes, we offer comprehensive maintenance packages for all our installations. This includes regular inspections, technical support, spare parts supply, and emergency repair services.",
-              },
-              {
-                question: "Can you work with international clients?",
-                answer:
-                  "Absolutely! We have experience with import/export operations and can work with international clients. We handle all necessary documentation and compliance requirements.",
-              },
-              {
-                question: "What is your payment structure?",
-                answer:
-                  "We typically work with a milestone-based payment structure: 30% advance, 40% during installation, and 30% upon completion. Payment terms can be customized based on project requirements.",
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
-              </div>
+          {/* FAQ Categories */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {Object.entries(contactData.faq.categories).map(([key, value]) => (
+              <button
+                key={key}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+            ${
+              selectedCategory === key
+                ? "bg-brand-green text-white shadow-lg transform -translate-y-0.5"
+                : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
+            }`}
+                onClick={() => setSelectedCategory(key)}
+              >
+                {value}
+              </button>
             ))}
+          </div>
+
+          {/* FAQ Items */}
+          <div className="grid gap-6">
+            {contactData.faq.questions
+              .filter(
+                (q) =>
+                  selectedCategory === "all" || q.category === selectedCategory
+              )
+              .map((faq, index) => (
+                <div
+                  key={faq.id}
+                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                >
+                  <button
+                    className="w-full text-left px-6 py-4 focus:outline-none"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <span className="text-2xl">{faq.icon}</span>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {faq.question}
+                        </h3>
+                      </div>
+                      <span
+                        className={`transform transition-transform duration-300
+                  ${openFAQ === index ? "rotate-180" : "rotate-0"}`}
+                      >
+                        <svg
+                          className="w-5 h-5 text-gray-500"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                  <div
+                    className={`px-6 pb-4 transition-all duration-300 ease-in-out
+                ${
+                  openFAQ === index
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
+                }`}
+                  >
+                    <div className="pl-12">
+                      <div className="border-l-2 border-brand-green/20 pl-4">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          {/* Contact CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-gray-600 mb-6">
+              Still have questions? We're here to help!
+            </p>
+            <a
+              href="mailto:kajalenterprise@gmail.com"
+              className="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Our Support Team
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

@@ -1,0 +1,48 @@
+{
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Quick answers to common questions about our services and processes",
+    "categories": {
+      "general": "General Questions",
+      "technical": "Technical Support",
+      "payment": "Payment & Pricing"
+    },
+    "questions": [
+      {
+        "id": "projects",
+        "category": "general",
+        "question": "What types of agricultural projects do you handle?",
+        "answer": "We specialize in greenhouse installations, cold storage solutions, IoT-based irrigation systems, solar power integration, and agricultural equipment import. We also provide consulting services for sustainable farming practices.",
+        "icon": "🌾"
+      },
+      {
+        "id": "timeline",
+        "category": "general",
+        "question": "How long does a typical project take to complete?",
+        "answer": "Project timelines vary depending on scope and complexity. Small installations typically take 2-4 weeks, while larger government contracts may take 3-6 months. We provide detailed timelines during the consultation phase.",
+        "icon": "⏱️"
+      },
+      {
+        "id": "maintenance",
+        "category": "technical",
+        "question": "Do you provide maintenance and support services?",
+        "answer": "Yes, we offer comprehensive maintenance packages for all our installations. This includes regular inspections, technical support, spare parts supply, and emergency repair services.",
+        "icon": "🔧"
+      },
+      {
+        "id": "international",
+        "category": "general",
+        "question": "Can you work with international clients?",
+        "answer": "Absolutely! We have experience with import/export operations and can work with international clients. We handle all necessary documentation and compliance requirements.",
+        "icon": "🌍"
+      },
+      {
+        "id": "payment",
+        "category": "payment",
+        "question": "What is your payment structure?",
+        "answer": "We typically work with a milestone-based payment structure: 30% advance, 40% during installation, and 30% upon completion. Payment terms can be customized based on project requirements.",
+        "icon": "💳"
+      }
+    ]
+  }
+}
