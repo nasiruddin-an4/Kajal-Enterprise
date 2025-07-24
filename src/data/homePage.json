@@ -129,6 +129,12 @@
         "Automated Ventilation",
         "Smart Irrigation",
         "Energy Efficient Design"
+      ],
+      "products": [
+        "Climate Control Systems",
+        "Automated Ventilation",
+        "Smart Irrigation",
+        "Energy Efficient Design"
       ]
     },
     {
@@ -178,6 +184,12 @@
       "title": "Agriculture Equipment",
       "description": "Import and distribution of modern farming machinery and tools.",
       "icon": "🚜",
+      "features": [
+        "Tractors",
+        "Harvesters",
+        "Irrigation Systems",
+        "Processing Units"
+      ],
       "products": [
         "Tractors",
         "Harvesters",

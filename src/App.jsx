@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import TeamMemberDetails from "./pages/TeamMemberDetails";
+import ServiceDetails from "./pages/ServiceDetails";
+import ImportExportDetails from "./pages/ImportExportDetails";
 
 function App() {
   return (
@@ -24,6 +26,11 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/team/:id" element={<TeamMemberDetails />} />
+              <Route path="/services/:id" element={<ServiceDetails />} />
+              <Route
+                path="/import-export/:id"
+                element={<ImportExportDetails />}
+              />
             </Routes>
           </main>
           <Footer />
