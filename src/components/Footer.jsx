@@ -79,10 +79,10 @@ const Footer = () => {
               </p>
               <p className="text-gray-400 text-sm">
                 <a
-                  href="mailto:kajalenterprise@gmail.com"
+                  href="mailto:info@kajalenterprise.com.bd"
                   className="hover:text-brand-green transition-colors"
                 >
-                  kajalenterprise@gmail.com
+                  info@kajalenterprise.com.bd
                 </a>
               </p>
               <p className="text-gray-400 text-sm">

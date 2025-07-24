@@ -154,7 +154,7 @@ const Contact = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+            {/* <div className="mt-8 bg-gray-50 p-6 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">
                 Business Hours
               </h4>
@@ -172,7 +172,7 @@ const Contact = () => {
                   <span>10:00 AM - 4:00 PM</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Contact Form */}

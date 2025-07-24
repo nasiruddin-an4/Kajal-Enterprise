@@ -152,12 +152,12 @@ const Partners = () => {
                       {project.duration}
                     </span>
                   </div>
-                  <div className="bg-gray-50 p-3 rounded-lg">
+                  {/* <div className="bg-gray-50 p-3 rounded-lg">
                     <span className="text-sm text-gray-500 block">Budget</span>
                     <span className="font-semibold text-brand-green">
                       {project.budget}
                     </span>
-                  </div>
+                  </div> */}
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <span className="text-sm text-gray-500 block">Impact</span>
                     <span className="font-semibold text-brand-blue">

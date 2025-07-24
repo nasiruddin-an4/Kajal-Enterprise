@@ -63,9 +63,9 @@ const Contact = () => {
     {
       title: "Email",
       icon: "✉️",
-      content: ["kajalenterprise@gmail.com"],
+      content: ["info@kajalenterprise.com.bd "],
       color: "bg-green-500",
-      link: "mailto:kajalenterprise@gmail.com",
+      link: "mailto:info@kajalenterprise.com.bd ",
     },
     {
       title: "Phone",
@@ -73,16 +73,6 @@ const Contact = () => {
       content: ["+880 1795 075 025", "+880 1686 283 657"],
       color: "bg-purple-500",
       links: ["tel:+8801795075025", "tel:+8801686283657"],
-    },
-    {
-      title: "Business Hours",
-      icon: "🕒",
-      content: [
-        "Sunday - Thursday: 9:00 AM - 6:00 PM",
-        "Friday: Closed",
-        "Saturday: 10:00 AM - 4:00 PM",
-      ],
-      color: "bg-orange-500",
     },
   ];
 
@@ -141,7 +131,7 @@ const Contact = () => {
       {/* Contact Information Cards */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
@@ -410,13 +400,16 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-gray-200 h-64 rounded-lg mb-6 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🗺️</div>
-                  <p className="text-gray-500">Interactive Map</p>
-                  <p className="text-sm text-gray-500">Mirpur DOHS, Dhaka</p>
-                </div>
+              {/* Map with Office Location */}
+              <div className="bg-white rounded-lg shadow-sm mb-6 overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4961116947943!2d90.36753159999999!3d23.8365108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1001d1ca385%3A0xd3ef37c79802f308!2sKajal%20Enterprise!5e0!3m2!1sen!2sbd!4v1753354247446!5m2!1sen!2sbd"
+                  className="w-full h-[400px]"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
 
               {/* Quick Contact */}
@@ -428,10 +421,10 @@ const Contact = () => {
                   <div className="flex items-center">
                     <span className="text-brand-green mr-3">📧</span>
                     <a
-                      href="mailto:kajalenterprise@gmail.com"
+                      href="mailto:info@kajalenterprise.com.bd "
                       className="text-brand-green hover:underline"
                     >
-                      kajalenterprise@gmail.com
+                      info@kajalenterprise.com.bd
                     </a>
                   </div>
                   <div className="flex items-center">
