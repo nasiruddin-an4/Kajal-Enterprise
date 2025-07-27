@@ -11,7 +11,24 @@ export default {
         'brand-blue': '#00196b',
         'brand-black': '#232b2b',
       },
-    },
+      keyframes: {
+        slideUp: {
+          '0%': {
+            transform: 'translateY(20px)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1'
+          },
+        }
+      },
+      animation: {
+        slideUp: 'slideUp 0.8s forwards'
+      }
+    }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -232,59 +232,96 @@
 
   "newsArticles": {
     "heading": "Latest News & Articles",
-    "subheading": "Stay updated with our latest innovations, project achievements, and insights into the future of agricultural technology and sustainable farming practices.",
+    "subheading": "Stay updated with our latest agricultural innovations and success stories",
+    "categories": {
+      "Technology": {
+        "color": "bg-blue-100 text-blue-800 border-blue-200"
+      },
+      "Innovation": {
+        "color": "bg-green-100 text-green-800 border-green-200"
+      },
+      "Success Story": {
+        "color": "bg-yellow-100 text-yellow-800 border-yellow-200"
+      }
+    },
     "articles": [
       {
-        "id": "dae-contract-2025",
-        "title": "Kajal Enterprise Wins Major DAE Contract for Smart Irrigation Systems",
-        "excerpt": "Our company has been awarded a significant contract by the Department of Agriculture Extension to implement IoT-based irrigation systems across 20 districts, marking a milestone in sustainable agriculture technology.",
+        "id": "smart-greenhouse-automation",
+        "title": "Smart Greenhouse Automation System Implementation",
+        "subtitle": "Revolutionizing agricultural practices with IoT",
+        "excerpt": "Learn how our smart greenhouse automation system is helping farmers increase yield and efficiency.",
+        "content": "<p>Detailed article content goes here...</p>",
         "image": "/slide-1.jpg",
-        "category": "Company News",
-        "date": "January 15, 2025",
-        "readTime": "3 min read",
-        "author": "Md Saiful Islam Khan",
-        "featured": true,
-        "tags": ["Government Contract", "IoT", "Irrigation", "DAE"]
-      },
-      {
-        "id": "cold-storage-2025",
-        "title": "Revolutionary Zero-Energy Cooling Chambers Reduce Post-Harvest Losses by 40%",
-        "excerpt": "Our innovative cold storage solutions have demonstrated remarkable success in preserving agricultural produce, significantly reducing waste and improving farmer incomes across rural Bangladesh.",
-        "image": "/slide-2.jpeg",
         "category": "Technology",
-        "date": "January 10, 2025",
-        "readTime": "4 min read",
-        "author": "Dr. Fatima Khatun",
-        "tags": ["Cold Storage", "Innovation", "Post-Harvest", "Technology"]
+        "date": "July 25, 2023",
+        "readTime": "5 min read",
+        "author": "John Doe",
+        "authorRole": "Agricultural Technology Specialist",
+        "tags": ["automation", "greenhouse", "IoT", "agriculture"],
+        "results": [
+          "30% increase in crop yield",
+          "50% reduction in water usage",
+          "Improved crop quality"
+        ]
       },
       {
-        "id": "solar-power-2025",
-        "title": "Solar-Powered Agriculture: Transforming Rural Farming Practices",
-        "excerpt": "Explore how our solar irrigation systems are revolutionizing farming practices, providing sustainable energy solutions that reduce costs and environmental impact while increasing agricultural productivity.",
+        "id": "precision-irrigation-insights",
+        "title": "Precision Irrigation: Data-Driven Watering Techniques",
+        "subtitle": "Using sensors and AI to optimize water use",
+        "excerpt": "Discover how precision irrigation is conserving water and boosting productivity on farms.",
+        "content": "Modern irrigation systems integrated with AI are transforming water management in agriculture. These systems use real-time data from soil moisture sensors, weather forecasts, and crop needs to automate irrigation schedules intelligently. By analyzing this data, AI algorithms determine the optimal amount and timing of water delivery, minimizing waste and ensuring that crops receive precise hydration. This approach not only conserves water but also enhances plant growth and yield. Farmers benefit from reduced costs, sustainable resource usage, and increased productivity through data-driven decision-making.",
+        "image": "/slide-4.jpeg",
+        "category": "Innovation",
+        "date": "August 12, 2023",
+        "readTime": "6 min read",
+        "author": "Fatima Rahman",
+        "authorRole": "Water Management Expert",
+        "tags": ["irrigation", "sensors", "AI", "water-saving"],
+        "results": [
+          "Up to 60% water savings",
+          "Lower operational costs",
+          "Higher plant health index"
+        ]
+      },
+      {
+        "id": "drone-field-monitoring",
+        "title": "Drone-Based Field Monitoring for Crop Health",
+        "subtitle": "Aerial surveillance and real-time data analytics",
+        "excerpt": "Explore how drones are transforming agricultural field inspections and disease detection.",
+        "content": "Drones are revolutionizing modern agriculture by providing real-time aerial imagery and data that help farmers monitor crop health with greater accuracy and efficiency. Equipped with multispectral and thermal sensors, these drones can detect signs of disease, pest infestation, and nutrient deficiencies long before they are visible to the naked eye. This early detection enables timely intervention, reducing crop loss and improving overall yield. Additionally, drone-based monitoring significantly reduces the need for manual field inspections, saving time and labor while covering large areas in minutes.",
         "image": "/slide-3.jpeg",
+        "category": "Agriculture",
+        "date": "September 5, 2023",
+        "readTime": "4 min read",
+        "author": "Ahmed Karim",
+        "authorRole": "Drone Systems Analyst",
+        "tags": ["drones", "monitoring", "crops", "AI"],
+        "results": [
+          "Faster detection of crop diseases",
+          "25% reduction in manual labor",
+          "Improved forecasting accuracy"
+        ]
+      },
+      {
+        "id": "climate-smart-farming",
+        "title": "Climate-Smart Farming for a Sustainable Future",
+        "subtitle": "Adapting to changing climates with tech",
+        "excerpt": "Learn about climate-smart agriculture techniques helping farmers build resilience.",
+        "content": "<p>Full article content on climate change adaptation strategies...</p>",
+        "image": "/slide-2.jpeg",
         "category": "Sustainability",
-        "date": "January 5, 2025",
-        "readTime": "5 min read",
-        "author": "Eng. Nasir Uddin",
-        "tags": [
-          "Solar Energy",
-          "Sustainability",
-          "Rural Development",
-          "Green Technology"
+        "date": "October 3, 2023",
+        "readTime": "7 min read",
+        "author": "Sadia Islam",
+        "authorRole": "Sustainable Farming Consultant",
+        "tags": ["climate", "sustainability", "farming", "resilience"],
+        "results": [
+          "Increased resilience to drought",
+          "More stable yields",
+          "Lower carbon footprint"
         ]
       }
-    ],
-    "categories": {
-      "Company News": {
-        "color": "bg-blue-100 text-brand-blue border-brand-blue"
-      },
-      "Technology": {
-        "color": "bg-green-100 text-brand-green border-green-200"
-      },
-      "Sustainability": {
-        "color": "bg-gray-50 text-brand-green border-emerald-200"
-      }
-    }
+    ]
   },
 
   "clientReviews": {

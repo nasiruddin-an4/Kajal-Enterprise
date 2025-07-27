@@ -1,132 +1,92 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import heroData from "../data/heroSlides.json";
+import "remixicon/fonts/remixicon.css";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const { slides } = heroData;
 
-  // Handle automatic slide change
   useEffect(() => {
     const timer = setInterval(() => {
-      handleNextSlide();
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [slides.length]);
 
-  // Handle slide navigation
-  const handleNextSlide = useCallback(() => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-      setTimeout(() => setIsAnimating(false), 1000);
-    }
-  }, [isAnimating, slides.length]);
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
-  const handlePrevSlide = useCallback(() => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-      setTimeout(() => setIsAnimating(false), 1000);
-    }
-  }, [isAnimating, slides.length]);
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   return (
-    <div className="relative h-screen bg-gray-900 overflow-hidden">
-      {/* Carousel */}
-      <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 transform ${
-              index === currentSlide
-                ? "opacity-100 translate-x-0"
-                : index < currentSlide
-                ? "opacity-0 -translate-x-full"
-                : "opacity-0 translate-x-full"
-            }`}
-          >
+    <div className="relative h-screen overflow-hidden">
+      {/* Slides Container */}
+      <div
+        className="flex transition-transform duration-700 ease-out h-full"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((slide) => (
+          <div key={slide.id} className="flex-shrink-0 w-full h-full relative">
             <img
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+
+            {/* Slide Content */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white max-w-5xl mx-auto px-4 pt-24">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 opacity-0 animate-slideUp">
+                  {slide.title}
+                </h1>
+                <p className="text-lg mb-8 text-white/80 max-w-3xl mx-auto opacity-0 animate-slideUp animation-delay-400">
+                  {slide.description}
+                </p>
+                <Link
+                  to={slide.cta.link}
+                  className="inline-flex items-center bg-brand-green hover:bg-opacity-90 text-white px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 opacity-0 animate-slideUp animation-delay-600"
+                >
+                  {slide.cta.text}
+                  <i className="ri-arrow-right-line ml-2 transition-transform group-hover:translate-x-1"></i>
+                </Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Buttons */}
       <button
         onClick={handlePrevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-sm"
-        disabled={isAnimating}
+        className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-all hover:scale-110 z-10"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
+        <i className="ri-arrow-left-s-line text-2xl"></i>
       </button>
       <button
         onClick={handleNextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 backdrop-blur-sm"
-        disabled={isAnimating}
+        className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-all hover:scale-110 z-10"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
+        <i className="ri-arrow-right-s-line text-2xl"></i>
       </button>
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="text-center text-white max-w-5xl mx-auto px-4">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`transition-all duration-1000 absolute inset-x-0 ${
-                index === currentSlide
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-            >
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 -mt-10 max-w-5xl mx-auto">
-                {slide.title}
-              </h1>
-              <p className="text-xl md:text-2xl mb-4 text-white/90">
-                {slide.subtitle}
-              </p>
-              <p className="text-lg mb-8 text-white/80 max-w-3xl mx-auto">
-                {slide.description}
-              </p>
-              <Link
-                to={slide.cta.link}
-                className="inline-block bg-brand-green hover:bg-opacity-90 text-white px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-              >
-                {slide.cta.text}
-              </Link>
-            </div>
-          ))}
-        </div>
+      {/* Dots Navigation */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? "w-10 bg-brand-green"
+                : "w-2.5 bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

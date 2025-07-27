@@ -178,14 +178,14 @@ const ProjectDetails = () => {
               </h3>
 
               <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+                {/* <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">
                     Budget
                   </span>
                   <span className="font-semibold text-brand-green">
                     {project.budget}
                   </span>
-                </div>
+                </div> */}
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">

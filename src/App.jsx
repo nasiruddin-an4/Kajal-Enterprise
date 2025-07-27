@@ -12,6 +12,7 @@ import TeamMemberDetails from "./pages/TeamMemberDetails";
 import ServiceDetails from "./pages/ServiceDetails";
 import ImportExportDetails from "./pages/ImportExportDetails";
 import ProjectDetails from "./pages/ProjectDetails";
+import ArticleDetails from "./pages/ArticleDetails";
 import "remixicon/fonts/remixicon.css";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                 element={<ImportExportDetails />}
               />
               <Route path="/projects/:id" element={<ProjectDetails />} />
+              <Route path="/news/:id" element={<ArticleDetails />} />
             </Routes>
           </main>
           <Footer />

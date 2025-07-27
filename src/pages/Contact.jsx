@@ -569,32 +569,6 @@ const Contact = () => {
                 </div>
               ))}
           </div>
-
-          {/* Contact CTA */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-600 mb-6">
-              Still have questions? We're here to help!
-            </p>
-            <a
-              href="mailto:kajalenterprise@gmail.com"
-              className="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Our Support Team
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
     </div>

@@ -39,7 +39,7 @@ body {
 }
 
 /* Custom animations */
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -49,7 +49,7 @@ body {
   }
 }
 
-@keyframes slideIn {
+@keyframes slide-in {
   from {
     transform: translateY(20px);
     opacity: 0;
@@ -61,28 +61,37 @@ body {
   }
 }
 
-@keyframes fadeInUp {
-  from {
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
     opacity: 0;
-    transform: translateY(30px);
   }
 
-  to {
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fade-in 0.8s ease-out forwards;
 }
 
 .animate-slide-in {
-  animation: slideIn 0.5s ease-out;
+  animation: slide-in 0.8s ease-out forwards;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+.animate-bounce-in {
+  animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 /* Utility classes */
@@ -209,4 +218,17 @@ body {
 
 .team-carousel .slick-slide>div {
   height: 100%;
+}
+
+/* Animation delays */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
 }
