@@ -44,11 +44,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-2">
+            <Link
+              to="/"
+              className="flex-shrink-0 flex items-center gap-2 focus:outline-none focus:ring-0 logo-link select-none"
+              style={{ WebkitTapHighlightColor: "transparent" }}
+            >
               <img
                 src="/logo.png"
                 alt="Logo"
                 className="w-24 object-fit-cover"
+                draggable="false"
               />
               <h2 className="text-2xl font-semibold">Kajal Enterprise</h2>
             </Link>

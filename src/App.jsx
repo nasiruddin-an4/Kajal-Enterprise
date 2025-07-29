@@ -20,7 +20,7 @@ function App() {
   return (
     <TeamProvider>
       <Router>
-        <ScrollToTop /> {/* Add this component */}
+        <ScrollToTop />
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <main>

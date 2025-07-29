@@ -87,43 +87,8 @@ const About = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      {/* Overview Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="observe-animation opacity-0">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">
-                Who We Are & What We Do
-              </h2>
-              <div className="prose prose-lg text-gray-500">
-                <p>
-                  Kajal Enterprise is a pioneering government contractor
-                  established in 2018, specializing in agricultural technology
-                  solutions, import & export services, and garment accessories
-                  supply.
-                </p>
-                <p>
-                  Under the leadership of Md Saiful Islam Khan, our dedicated
-                  team of 14 professionals is committed to revolutionizing
-                  agriculture through innovative technology and sustainable
-                  practices.
-                </p>
-              </div>
-            </div>
-            <div className="relative observe-animation opacity-0">
-              <div className="absolute inset-0 bg-brand-green rounded-3xl transform rotate-3 opacity-10"></div>
-              <img
-                src="/public/slide-4.jpeg"
-                alt="Modern Agriculture"
-                className="relative rounded-3xl transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Mission & Vision Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-gray-200">
@@ -202,19 +167,28 @@ const About = () => {
               Milestones that shaped our success
             </p>
           </div>
+
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-green"></div>
-            <div className="space-y-12">
+            {/* Timeline Line */}
+            <div className="absolute left-[16px] md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-brand-green"></div>
+
+            {/* Timeline Items */}
+            <div className="space-y-8">
               {timeline.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  className={`flex items-start ${
+                    // On mobile: always left-aligned
+                    // On desktop: alternate between left and right
+                    index % 2 === 0
+                      ? "md:flex-row"
+                      : "flex-row md:flex-row-reverse"
                   }`}
                 >
+                  {/* Content */}
                   <div
-                    className={`w-1/2 ${
-                      index % 2 === 0 ? "pr-8 text-right" : "pl-8"
+                    className={`ml-12 md:ml-0 w-full md:w-1/2 ${
+                      index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
                     }`}
                   >
                     <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
@@ -227,8 +201,12 @@ const About = () => {
                       <p className="text-gray-500">{item.description}</p>
                     </div>
                   </div>
-                  <div className="w-8 h-8 bg-brand-green rounded-full border-4 border-white shadow-lg relative z-10"></div>
-                  <div className="w-1/2"></div>
+
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-brand-green rounded-full border-4 border-white shadow-lg z-10"></div>
+
+                  {/* Empty space for desktop layout */}
+                  <div className="hidden md:block md:w-1/2"></div>
                 </div>
               ))}
             </div>
@@ -237,7 +215,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
@@ -267,7 +245,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-brand-green to-green-900 text-white">

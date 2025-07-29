@@ -1,13 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import projectsData from "../data/recentProjects.json";
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  // Get unique categories from all projects
   const categories = [
     "all",
     ...new Set([
@@ -15,16 +10,6 @@ const Projects = () => {
       ...projectsData.completedProjects.map((p) => p.category),
     ]),
   ];
-
-  // Filter upcoming projects based on search and category
-  const filteredProjects = projectsData.upcomingProjects.filter((project) => {
-    const matchesCategory =
-      activeCategory === "all" || project.category === activeCategory;
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
 
   const getCategoryColor = (category) => {
     const colors = {
@@ -53,13 +38,15 @@ const Projects = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
+      rootMargin: "50px 0px", // Changed to trigger earlier
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0");
           entry.target.classList.add("animate-fade-in-up");
+          observer.unobserve(entry.target); // Stop observing once animated
         }
       });
     }, observerOptions);
@@ -68,7 +55,7 @@ const Projects = () => {
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [activeCategory]);
+  }, []);
 
   return (
     <div className="pt-16">
@@ -95,13 +82,8 @@ const Projects = () => {
             </p>
 
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
               {[
-                {
-                  label: "Total Investment",
-                  value: projectsData.statistics.totalInvestment,
-                  icon: "💰",
-                },
                 {
                   label: "Districts Impacted",
                   value: projectsData.statistics.districtsImpacted,
@@ -222,66 +204,21 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Upcoming Projects Section - Enhanced */}
+      {/* Upcoming Projects Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-green mb-4">
               Upcoming Projects
             </h2>
-
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">
               Innovative pipeline of projects shaping the future of agriculture
             </p>
           </div>
 
-          {/* Enhanced Filters */}
-          <div className="mb-12">
-            <div className="flex flex-col md:flex-row gap-6 items-center justify-between bg-white p-6 rounded-xl shadow-sm">
-              <div className="flex flex-wrap gap-2 justify-center">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveCategory(category)}
-                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                      activeCategory === category
-                        ? "bg-brand-green text-white shadow-md transform -translate-y-0.5"
-                        : "bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow"
-                    }`}
-                  >
-                    {category === "all" ? "All Projects" : category}
-                  </button>
-                ))}
-              </div>
-
-              <div className="relative w-full md:w-auto">
-                <input
-                  type="text"
-                  placeholder="Search projects..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full md:w-64 pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
-                />
-                <svg
-                  className="absolute left-4 top-3.5 h-5 w-5 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* Projects Grid - Enhanced */}
+          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {projectsData.upcomingProjects.map((project, index) => (
               <div
                 key={project.id}
                 className="group bg-white rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 observe-animation opacity-0 border"
@@ -328,14 +265,6 @@ const Projects = () => {
                         {project.timeline}
                       </span>
                     </div>
-                    {/* <div className="bg-gray-50 p-3 rounded-lg">
-                      <span className="text-xs text-gray-500 block mb-1">
-                        Budget
-                      </span>
-                      <span className="font-semibold text-brand-green">
-                        {project.budget}
-                      </span>
-                    </div> */}
                   </div>
 
                   {/* Features Tags */}
@@ -364,19 +293,6 @@ const Projects = () => {
               </div>
             ))}
           </div>
-
-          {/* No Results Message */}
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16 bg-white rounded-2xl shadow-sm">
-              <div className="text-gray-400 text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                No projects found
-              </h3>
-              <p className="text-gray-500">
-                Try adjusting your search or filter criteria
-              </p>
-            </div>
-          )}
         </div>
       </section>
 
