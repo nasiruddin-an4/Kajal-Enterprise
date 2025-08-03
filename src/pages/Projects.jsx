@@ -211,7 +211,7 @@ const Projects = () => {
               Upcoming Projects
             </h2>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-              Innovative pipeline of projects shaping the future of agriculture
+              Emerging technologies that we plan to incorporate in the future
             </p>
           </div>
 

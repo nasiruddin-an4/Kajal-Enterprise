@@ -30,9 +30,9 @@ const Home = () => {
         <TeamMembers />
       </section> */}
 
-      <section id="news">
+      {/* <section id="news">
         <NewsArticles />
-      </section>
+      </section> */}
 
       {/* <section id="reviews">
         <ClientReviews />
