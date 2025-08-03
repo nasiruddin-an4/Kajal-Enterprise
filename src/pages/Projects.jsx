@@ -148,7 +148,6 @@ const Projects = () => {
                       // { label: "Budget", value: project.budget },
                       { label: "Impact", value: project.impact },
                       { label: "Location", value: project.location },
-                      { label: "Completed", value: project.completedDate },
                     ].map((item, idx) => (
                       <div key={idx} className="bg-gray-50 p-2 rounded-lg">
                         <span className="text-sm text-gray-500 block ">

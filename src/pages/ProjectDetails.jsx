@@ -1,11 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import projectsData from "../data/recentProjects.json";
+import PhotoGallery from "../components/PhotoGallery";
 
 const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     const findProject = () => {
@@ -17,6 +19,14 @@ const ProjectDetails = () => {
 
     findProject();
   }, [id]);
+
+  const openLightbox = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
 
   if (loading) {
     return (
@@ -167,6 +177,16 @@ const ProjectDetails = () => {
                   </div>
                 </div>
               )}
+
+              {/* Photo Gallery */}
+              {project.galleryImages && project.galleryImages.length > 0 && (
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6">
+                    Photo Gallery
+                  </h3>
+                  <PhotoGallery images={project.galleryImages} />
+                </div>
+              )}
             </div>
           </div>
 
@@ -178,15 +198,6 @@ const ProjectDetails = () => {
               </h3>
 
               <div className="space-y-4">
-                {/* <div className="bg-gray-50 p-4 rounded-lg">
-                  <span className="text-sm text-gray-500 block mb-1">
-                    Budget
-                  </span>
-                  <span className="font-semibold text-brand-green">
-                    {project.budget}
-                  </span>
-                </div> */}
-
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <span className="text-sm text-gray-500 block mb-1">
                     Timeline

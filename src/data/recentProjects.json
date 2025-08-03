@@ -24,7 +24,15 @@
         "200+ farmers trained",
         "Real-time monitoring implemented"
       ],
-      "image": "/slide-1.jpg"
+      "image": "/slide-1.jpg",
+      "galleryImages": [
+        "/slide-1.jpg",
+        "/images/projects/project1-detail1.jpg",
+        "/images/projects/project1-detail2.jpg",
+        "/images/projects/project1-detail3.jpg",
+        "/images/projects/project1-detail4.jpg",
+        "/images/projects/project1-detail5.jpg"
+      ]
     },
     {
       "id": "solar-irrigation-2024",
@@ -51,7 +59,12 @@
         "Zero carbon emissions",
         "24/7 monitoring system"
       ],
-      "image": "/slide-2.jpeg"
+      "image": "/projectImg/solar based irrigation3.jpg",
+      "galleryImages": [
+        "/projectImg/solar based irrigation1.jpg",
+        "/projectImg/solar based irrigation2.jpg",
+        "/projectImg/solar based irrigation3.jpg"
+      ]
     },
     {
       "id": "cold-storage-2024",
@@ -76,7 +89,12 @@
         "Increased farmer income",
         "Temperature Monitoring"
       ],
-      "image": "/slide-3.jpeg"
+      "image": "/public/projectImg/Cold storage.jpg",
+      "galleryImages": [
+        "/projectImg/Cold storage.jpg",
+        "/projectImg/Cold storage2.jpg",
+        "/projectImg/Cold storage3.jpg"
+      ]
     },
     {
       "id": "mobile-training-2023",
@@ -100,47 +118,93 @@
         "Boosted technology adoption by 35%",
         "Enhanced productivity in trained regions"
       ],
-      "image": "/slide-5.jpeg"
+      "image": "/slide-5.jpeg",
+      "galleryImages": []
     },
     {
-      "id": "agro-marketplace-2022",
-      "title": "Digital Agro Marketplace",
-      "subtitle": "Connecting Farmers to Buyers",
-      "description": "Development of a digital marketplace platform to connect farmers directly with institutional buyers, reducing middlemen costs.",
-      "completedDate": "December 2022",
-      "category": "Digital Platform",
-      "icon": "📱",
-      "client": "Farmer Cooperatives",
-      "impact": "800+ Farmers Benefited",
-      "budget": "$180K",
-      "location": "Nationwide, Bangladesh",
-      "features": ["Mobile App", "Real-time Listings", "Payment Integration"],
+      "id": "garlic-onion-storage-2025",
+      "title": "Garlic & Onion Storage Units",
+      "subtitle": "Post-Harvest Preservation Project",
+      "description": "Deployment of low-cost, ventilated storage systems for garlic and onion to reduce spoilage and extend shelf life.",
+      "completedDate": "July 2025",
+      "category": "Post-Harvest",
+      "icon": "🧅",
+      "client": "Local Agricultural Cooperatives",
+      "impact": "70% Reduction in Spoilage",
+      "budget": "$90K",
+      "location": "Northwest Bangladesh",
+      "features": ["Ventilated Storage", "Humidity Control", "Stackable Units"],
       "results": [
-        "Reduced marketing costs by 20%",
-        "Increased farmer profits",
-        "Improved product traceability"
+        "70% reduction in spoilage losses",
+        "Improved market readiness",
+        "Enhanced farmer revenue"
       ],
-      "image": "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg"
+      "image": "/projectImg/garlic and onion storage-2.jpg",
+      "galleryImages": [
+        "/projectImg/garlic and onion storage-2.jpg",
+        "/projectImg/garlic and onion storage-1.jpg",
+        "/projectImg/garlic and onion storage4.jpg"
+      ]
     },
     {
-      "id": "agro-marketplace-2022",
-      "title": "Digital Agro Marketplace",
-      "subtitle": "Connecting Farmers to Buyers",
-      "description": "Development of a digital marketplace platform to connect farmers directly with institutional buyers, reducing middlemen costs.",
-      "completedDate": "December 2022",
-      "category": "Digital Platform",
-      "icon": "📱",
-      "client": "Farmer Cooperatives",
-      "impact": "800+ Farmers Benefited",
-      "budget": "$180K",
-      "location": "Nationwide, Bangladesh",
-      "features": ["Mobile App", "Real-time Listings", "Payment Integration"],
-      "results": [
-        "Reduced marketing costs by 20%",
-        "Increased farmer profits",
-        "Improved product traceability"
+      "id": "portable-solar-2025",
+      "title": "Portable Solar Energy Kits",
+      "subtitle": "Power On-The-Go for Farmers",
+      "description": "Distribution of lightweight, portable solar kits for small-scale farmers to power tools, lights, and mobile devices in the field.",
+      "completedDate": "June 2025",
+      "category": "Energy Access",
+      "icon": "🔋",
+      "client": "Individual Farmers",
+      "impact": "300+ Kits Distributed",
+      "budget": "$75K",
+      "location": "Nationwide",
+      "features": [
+        "Portable Design",
+        "USB Charging",
+        "LED Lighting",
+        "Solar Panels"
       ],
-      "image": "https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg"
+      "results": [
+        "Improved productivity after dark",
+        "Reduced dependency on grid power",
+        "Enhanced access to information"
+      ],
+      "image": "/projectImg/portable solar2.jpg",
+      "galleryImages": [
+        "/projectImg/portable solar2.jpg",
+        "/projectImg/portable solar1.jpg",
+        "/projectImg/portable solar1.jpg"
+      ]
+    },
+    {
+      "id": "iot-crop-monitoring-2025",
+      "title": "IoT-Based Crop Monitoring",
+      "subtitle": "Precision Farming Solution",
+      "description": "Implementation of an IoT-based crop monitoring system using real-time data for soil moisture, temperature, and crop health analysis.",
+      "completedDate": "May 2025",
+      "category": "Smart Agriculture",
+      "icon": "📡",
+      "client": "Agri-Tech Startups",
+      "impact": "Real-Time Monitoring in 5 Regions",
+      "budget": "$180K",
+      "location": "Selected Agricultural Zones",
+      "features": [
+        "Soil Sensors",
+        "Weather Forecast Integration",
+        "Mobile App Dashboard",
+        "Automated Alerts"
+      ],
+      "results": [
+        "20% yield improvement",
+        "Reduced input waste",
+        "Timely farmer interventions"
+      ],
+      "image": "/projectImg/iot.jpg",
+      "galleryImages": [
+        "/projectImg/iot.jpg",
+        "/projectImg/iot.jpg",
+        "/projectImg/iot.jpg"
+      ]
     }
   ],
 
