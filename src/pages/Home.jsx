@@ -34,9 +34,9 @@ const Home = () => {
         <NewsArticles />
       </section>
 
-      <section id="reviews">
+      {/* <section id="reviews">
         <ClientReviews />
-      </section>
+      </section> */}
 
       <section id="partners">
         <Partners />
