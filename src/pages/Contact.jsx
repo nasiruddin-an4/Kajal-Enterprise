@@ -28,25 +28,45 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-        projectType: "",
-        budget: "",
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx0DSDd9840QjfU9efFoFx2zQ47FuiEKva64Eh-3sHsoNRsU0hxsrQ-DwJHun4unMbpew/exec', {
+        method: 'POST',
+        body: new URLSearchParams({
+          'Name': formData.name,
+          'Email': formData.email,
+          'Phone': formData.phone,
+          'Company': formData.company,
+          'Subject': formData.subject,
+          'Message': formData.message,
+        }),
       });
 
-      // Reset status after 5 seconds
+      const result = await response.json();
+
+      if (result.result === 'success') {
+        setSubmitStatus('success');
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
+          projectType: "",
+          budget: "",
+        });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -63,9 +83,9 @@ const Contact = () => {
     {
       title: "Email",
       icon: "✉️",
-      content: ["info@kajalenterprise.com.bd "],
+      content: ["info@kajalenterprise.com.bd"],
       color: "bg-green-500",
-      link: "mailto:info@kajalenterprise.com.bd ",
+      link: "mailto:info@kajalenterprise.com.bd",
     },
     {
       title: "Phone",
@@ -102,7 +122,6 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-green to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -128,7 +147,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information Cards */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
@@ -174,11 +192,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form and Map */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <div>
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -197,6 +213,17 @@ const Contact = () => {
                     <span>
                       Thank you! Your message has been sent successfully. We'll
                       get back to you soon.
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  <div className="flex items-center">
+                    <span className="text-xl mr-2">❌</span>
+                    <span>
+                      Something went wrong. Please try again or contact us directly.
                     </span>
                   </div>
                 </div>
@@ -340,7 +367,6 @@ const Contact = () => {
               </form>
             </div>
 
-            {/* Office Information */}
             <div>
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -352,7 +378,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Map with Office Location */}
               <div className="bg-white rounded-lg shadow-sm mb-6 overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4961116947943!2d90.36753159999999!3d23.8365108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1001d1ca385%3A0xd3ef37c79802f308!2sKajal%20Enterprise!5e0!3m2!1sen!2sbd!4v1753354247446!5m2!1sen!2sbd"
