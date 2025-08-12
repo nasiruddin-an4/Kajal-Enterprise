@@ -28,25 +28,45 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-        projectType: "",
-        budget: "",
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx0DSDd9840QjfU9efFoFx2zQ47FuiEKva64Eh-3sHsoNRsU0hxsrQ-DwJHun4unMbpew/exec', {
+        method: 'POST',
+        body: new URLSearchParams({
+          'Name': formData.name,
+          'Email': formData.email,
+          'Phone': formData.phone,
+          'Company': formData.company,
+          'Subject': formData.subject,
+          'Message': formData.message,
+        }),
       });
 
-      // Reset status after 5 seconds
+      const result = await response.json();
+
+      if (result.result === 'success') {
+        setSubmitStatus('success');
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
+          projectType: "",
+          budget: "",
+        });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -63,9 +83,9 @@ const Contact = () => {
     {
       title: "Email",
       icon: "✉️",
-      content: ["info@kajalenterprise.com.bd "],
+      content: ["info@kajalenterprise.com.bd"],
       color: "bg-green-500",
-      link: "mailto:info@kajalenterprise.com.bd ",
+      link: "mailto:info@kajalenterprise.com.bd",
     },
     {
       title: "Phone",
@@ -102,7 +122,6 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-green to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -128,7 +147,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information Cards */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
@@ -174,11 +192,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form and Map */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <div>
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -197,6 +213,17 @@ const Contact = () => {
                     <span>
                       Thank you! Your message has been sent successfully. We'll
                       get back to you soon.
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  <div className="flex items-center">
+                    <span className="text-xl mr-2">❌</span>
+                    <span>
+                      Something went wrong. Please try again or contact us directly.
                     </span>
                   </div>
                 </div>
@@ -281,54 +308,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="projectType"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Service Interest
-                    </label>
-                    <select
-                      id="projectType"
-                      name="projectType"
-                      value={formData.projectType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition-colors"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service, index) => (
-                        <option key={index} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="budget"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Project Budget
-                    </label>
-                    <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition-colors"
-                    >
-                      <option value="">Select budget range</option>
-                      {budgetRanges.map((range, index) => (
-                        <option key={index} value={range}>
-                          {range}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
                 <div>
                   <label
                     htmlFor="subject"
@@ -388,7 +367,6 @@ const Contact = () => {
               </form>
             </div>
 
-            {/* Office Information */}
             <div>
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -400,174 +378,17 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Map with Office Location */}
               <div className="bg-white rounded-lg shadow-sm mb-6 overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4961116947943!2d90.36753159999999!3d23.8365108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1001d1ca385%3A0xd3ef37c79802f308!2sKajal%20Enterprise!5e0!3m2!1sen!2sbd!4v1753354247446!5m2!1sen!2sbd"
-                  className="w-full h-[400px]"
+                  className="w-full h-[600px]"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-
-              {/* Quick Contact */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Quick Contact
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="text-brand-green mr-3">📧</span>
-                    <a
-                      href="mailto:info@kajalenterprise.com.bd "
-                      className="text-brand-green hover:underline"
-                    >
-                      info@kajalenterprise.com.bd
-                    </a>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-brand-green mr-3">📱</span>
-                    <div>
-                      <a
-                        href="tel:+8801795075025"
-                        className="text-brand-green hover:underline block"
-                      >
-                        +880 1795 075 025
-                      </a>
-                      <a
-                        href="tel:+8801686283657"
-                        className="text-brand-green hover:underline block"
-                      >
-                        +880 1686 283 657
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-brand-green mr-3 mt-1">📍</span>
-                    <div>
-                      <p className="text-gray-700">
-                        H # 500, 3rd floor, R # 7, A # 4
-                      </p>
-                      <p className="text-gray-700">Mirpur DOHS, Dhaka - 1216</p>
-                      <p className="text-gray-700">Bangladesh</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Emergency Contact */}
-              <div className="mt-6 bg-red-50 border border-red-200 p-4 rounded-lg">
-                <h4 className="font-semibold text-red-800 mb-2">
-                  Emergency Support
-                </h4>
-                <p className="text-red-700 text-sm mb-2">
-                  For urgent technical support or emergency situations:
-                </p>
-                <a
-                  href="tel:+8801795075025"
-                  className="text-red-600 font-semibold hover:underline"
-                >
-                  +880 1795 075 025 (24/7)
-                </a>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-brand-green mb-4">
-              {contactData.faq.heading}
-            </h2>
-            <p className="text-xl text-gray-600">
-              {contactData.faq.subheading}
-            </p>
-          </div>
-
-          {/* FAQ Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {Object.entries(contactData.faq.categories).map(([key, value]) => (
-              <button
-                key={key}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-            ${
-              selectedCategory === key
-                ? "bg-brand-green text-white shadow-lg transform -translate-y-0.5"
-                : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
-            }`}
-                onClick={() => setSelectedCategory(key)}
-              >
-                {value}
-              </button>
-            ))}
-          </div>
-
-          {/* FAQ Items */}
-          <div className="grid gap-6">
-            {contactData.faq.questions
-              .filter(
-                (q) =>
-                  selectedCategory === "all" || q.category === selectedCategory
-              )
-              .map((faq, index) => (
-                <div
-                  key={faq.id}
-                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
-                >
-                  <button
-                    className="w-full text-left px-6 py-4 focus:outline-none"
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <span className="text-2xl">{faq.icon}</span>
-                        <h3 className="text-lg font-semibold text-gray-900">
-                          {faq.question}
-                        </h3>
-                      </div>
-                      <span
-                        className={`transform transition-transform duration-300
-                  ${openFAQ === index ? "rotate-180" : "rotate-0"}`}
-                      >
-                        <svg
-                          className="w-5 h-5 text-gray-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </button>
-                  <div
-                    className={`px-6 pb-4 transition-all duration-300 ease-in-out
-                ${
-                  openFAQ === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0 overflow-hidden"
-                }`}
-                  >
-                    <div className="pl-12">
-                      <div className="border-l-2 border-brand-green/20 pl-4">
-                        <p className="text-gray-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
           </div>
         </div>
       </section>
